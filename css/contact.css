@@ -1,0 +1,105 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: #005aa7;
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+  }
+  
+
+  /* Header */
+  .topbar {
+    background-color: #003366;
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Adjust the topbar container */
+.topbar .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Reduce the gap between the logo and the text */
+}
+
+/* Adjust the logo */
+.logo {
+  height: 80px;
+  margin-right: 0; /* Remove the auto margin */
+}
+
+/* Adjust the header text */
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: left; /* Align the text to the left */
+  line-height: 1.4;
+  margin: 0; /* Remove extra margins */
+}
+
+header h1 br + span {
+    color: #ffcc00; /* Change color for "Government of Meghalaya" */
+}
+  
+  /* Navigation */
+  nav {
+    background-color: #005aa7;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+  
+  nav li {
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+/* Footer Styles */
+footer {
+  background-color: #ffffff; /* Light gray background */
+  color: #333; /* Dark text color */
+  padding: 20px 0; /* Spacing around the footer content */
+  text-align: center; /* Center-align the text */
+  font-size: 14px; /* Adjust font size */
+  line-height: 1.6; /* Improve readability */
+}
+
+footer .container {
+  max-width: 1200px; /* Limit the width of the footer content */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 0 15px; /* Add some padding for smaller screens */
+}
+
+footer img.nic-logo {
+  margin-top: 10px; /* Add spacing above the logo */
+  width: 100px; /* Adjust the logo size */
+  height: auto; /* Maintain aspect ratio */
+}
