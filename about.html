@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
+    <div class="utility-bar">
+        <a href="#content" class="skip-link">Skip to main content</a> |
+        <a href="screen.html" target="_self">Screen Reader Access</a> |
+        Text Size 
+        <button onclick="adjustTextSize('small')">A<sup>-</sup></button>
+        <button onclick="adjustTextSize('default')">A</button>
+        <button onclick="adjustTextSize('large')">A<sup>+</sup></button> |
+        Contrast Options
+        <button onclick="setContrast('black')">A</button>
+        <button onclick="setContrast('white')">A</button>
+        <button onclick="setContrast('default')">A</button> |
+        Character Spacing
+        <button onclick="toggleSpacing(true)">on</button>
+        <button onclick="toggleSpacing(false)">off</button> |
+        Search
+        <input type="text" id="search-box" placeholder="Search...">
+        <button onclick="performSearch()">Go</button>
+      </div>
     <!--<header>
         <h1>About Us</h1>
         <nav>
@@ -55,7 +73,7 @@
             <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.<br>
                 Content Owned and Updated by Home (Political) Department, Government of Meghalaya.<br>
                 All queries/ comments regarding the content on this site may be sent to:</p>
-                <p>The Chief Secretary, Government of Meghalaya, Home (Political) Department, Government of Meghalaya.</p>
+                <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
             <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
         </div>
     </footer>
