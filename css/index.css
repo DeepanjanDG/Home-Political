@@ -7,7 +7,7 @@
   --bg-color: #f4f6f9;
   --white: #ffffff;
   --black: #000000;
-  --font-main: 'Inter', sans-serif;
+  --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
 }
 
 * {
@@ -129,29 +129,109 @@ header h1 {
 }
 
 header h1 br + span {
-  color: #ffcc00;
+  color: var(--white); /* Changed from #ffcc00 to white */
 }
 
 
 /* Navigation */
+/* Navigation Styles */
 nav {
-  background-color: var(--secondary-color);
+  background-color: #005aa7;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
-  padding: 10px 0;
+  padding: 0.5rem 0;
+  margin: 0;
 }
 
 nav li {
-  margin: 0 15px;
+  margin: 0 1rem;
+  position: relative;
 }
 
 nav a {
-  color: var(--white);
+  color: white;
   font-weight: 500;
+  text-decoration: none; /* Removed underline */
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect - Bottom Border */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active Link Style */
+nav a.active {
+  color: var(--accent-color);
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+/* Tap/Click Effect */
+nav a:active {
+  transform: scale(0.98);
+}
+
+/* Scrolled State */
+nav.scrolled {
+  padding: 0.3rem 0;
+  background-color: rgba(0, 90, 167, 0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  nav li {
+    margin: 0.3rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+  }
+  
+  nav a::after {
+    display: none;
+  }
+  
+  nav.scrolled {
+    padding: 0.2rem 0;
+  }
 }
 
 /* Hero Section */

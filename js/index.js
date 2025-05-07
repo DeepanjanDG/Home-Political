@@ -7,6 +7,56 @@ const screenReaderBtn = document.getElementById('screen-reader-access');
 const screenReaderModal = document.getElementById('screen-reader-modal');
 const closeScreenReaderBtn = document.getElementById('close-screen-reader');
 
+// Navigation scroll effect
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    // Skip if it's an external link
+    if (this.getAttribute('href').startsWith('http') || 
+        this.getAttribute('href').includes('.html')) {
+      return;
+    }
+    
+    e.preventDefault();
+    
+    // Add active class
+    document.querySelectorAll('nav a').forEach(link => {
+      link.classList.remove('active');
+    });
+    this.classList.add('active');
+    
+    // Smooth scroll to target
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Highlight current page in navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPage = window.location.pathname.split('/').pop();
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
+
+
 // Text Size Adjustment
 textSizeButtons.forEach(button => {
   button.addEventListener('click', () => {

@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
+    <!-- Accessibility Toolbar -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-group">
+        <!--<a href="#main-content" class="skip-link">Skip to main content</a>-->
+        <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
+      </div>
+      <div class="utility-group">
+        <button id="screen-reader-btn" class="utility-btn">Screen Reader Access</button>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Text Size:</span>
+        <button class="utility-btn text-size-btn" data-size="small">A⁻</button>
+        <button class="utility-btn text-size-btn" data-size="default">A</button>
+        <button class="utility-btn text-size-btn" data-size="large">A⁺</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Contrast:</span>
+        <button class="utility-btn contrast-btn" data-theme="dark">A</button>
+        <button class="utility-btn contrast-btn" data-theme="light">A</button>
+        <button class="utility-btn contrast-btn" data-theme="default">A</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Spacing:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
+      </div>
+      <div class="utility-group search-group">
+        <input type="text" id="search-input" placeholder="Search..." class="search-input">
+        <button id="search-btn" class="search-btn">Go</button>
+      </div>
+    </div>
+  </div>
+    <!-- Header -->
     <div class="utility-bar">
         <a href="#content" class="skip-link">Skip to main content</a> |
         <a href="screen.html" target="_self">Screen Reader Access</a> |
@@ -26,6 +61,7 @@
         <button onclick="performSearch()">Go</button>
       </div>
     <header>
+        
         <div class="topbar">
             <div class="container">
                 <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
