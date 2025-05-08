@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Base Styles */
 :root {
   --primary-color: #003366;
   --secondary-color: #005aa7;
@@ -7,7 +7,7 @@
   --bg-color: #f4f6f9;
   --white: #ffffff;
   --black: #000000;
-  --font-main: 'Inter', sans-serif;
+  --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
 }
 
 * {
@@ -21,20 +21,22 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: all 0.3s ease;
 }
 
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 1rem 2rem;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Utility Bar - Matches index.html */
+/* Utility Bar */
 .utility-bar {
-  background-color: var(--primary-color);
+  background-color: #004080; /* A slightly lighter shade than the header */
   color: var(--white);
   padding: 10px 0;
   font-size: 14px;
+  border-bottom: 2px solid var(--secondary-color); /* Optional: Add a border for further distinction */
 }
 
 .utility-bar .container {
@@ -75,17 +77,15 @@ body {
 }
 
 .search-input {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border: none;
   border-radius: 3px 0 0 3px;
   background: rgba(255, 255, 255, 0.1);
   color: var(--white);
-  transition: width 0.3s, background 0.3s;
 }
 
-.search-input:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.2);
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-btn {
@@ -106,9 +106,9 @@ body {
   left: 10px;
 }
 
-/* Header - Matches index.html */
+/* Header Styles */
 .topbar {
-  background-color: var(--primary-color);
+  background-color: #003366;
   color: white;
   padding: 1rem 0;
 }
@@ -123,22 +123,34 @@ body {
   height: 80px;
 }
 
+/* Header Text Styling */
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 2rem; /* Consistent font size */
+  font-weight: 600; /* Consistent font weight */
+  line-height: 1.4; /* Consistent line height */
+  color: var(--white); /* Consistent text color */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove extra margins */
 }
 
 header h1 br + span {
-  color: var(--accent-color);
+  color: var(--accent-color); /* Highlight the second line with accent color */
+  font-weight: 700; /* Make the second line slightly bolder */
 }
 
-/* Navigation - Matches index.html with hover effects */
+
+/* Navigation */
+/* Navigation Styles */
 nav {
-  background-color: var(--secondary-color);
+  background-color: #005aa7;
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -146,6 +158,7 @@ nav ul {
   display: flex;
   justify-content: center;
   padding: 0.5rem 0;
+  margin: 0;
 }
 
 nav li {
@@ -156,11 +169,13 @@ nav li {
 nav a {
   color: white;
   font-weight: 500;
+  text-decoration: none; /* Removed underline */
   padding: 0.5rem 0;
   position: relative;
-  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect - Bottom Border */
 nav a::after {
   content: '';
   position: absolute;
@@ -176,6 +191,7 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Active Link Style */
 nav a.active {
   color: var(--accent-color);
 }
@@ -184,13 +200,53 @@ nav a.active::after {
   width: 100%;
 }
 
+/* Tap/Click Effect */
+nav a:active {
+  transform: scale(0.98);
+}
+
+/* Scrolled State */
+nav.scrolled {
+  padding: 0.3rem 0;
+  background-color: rgba(0, 90, 167, 0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  nav li {
+    margin: 0.3rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+  }
+  
+  nav a::after {
+    display: none;
+  }
+  
+  nav.scrolled {
+    padding: 0.2rem 0;
+  }
+}
+
 /* Content Sections */
 .content-section {
   margin-bottom: 2rem;
   background: var(--white);
   padding: 2rem;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .content-section h2 {
@@ -200,11 +256,17 @@ nav a.active::after {
   border-bottom: 2px solid var(--secondary-color);
 }
 
-/* Footer - Matches index.html */
+.content-section p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
 footer {
   background: var(--white);
   padding: 20px 0;
   text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
 }
 
 .nic-logo {
@@ -215,25 +277,25 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .utility-bar .container {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .search-group {
-      margin-left: 0;
-      width: 100%;
+    margin-left: 0;
+    width: 100%;
   }
-  
+
   nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   nav li {
-      margin: 5px 0;
+    margin: 5px 0;
   }
-  
+
   .content-section {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
 }

@@ -3,65 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Home (Political) Department | Meghalaya</title>
-    <link rel="stylesheet" href="css/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Contact Us - Home (Political) Department</title>
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <!-- Accessibility Toolbar - Matches index.html -->
-    <div class="utility-bar">
+    <!-- Accessibility Toolbar -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-group">
+        <!--<a href="#main-content" class="skip-link">Skip to main content</a>-->
+        <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
+      </div>
+      <div class="utility-group">
+        <button id="screen-reader-btn" class="utility-btn">Screen Reader Access</button>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Text Size:</span>
+        <button class="utility-btn text-size-btn" data-size="small">A⁻</button>
+        <button class="utility-btn text-size-btn" data-size="default">A</button>
+        <button class="utility-btn text-size-btn" data-size="large">A⁺</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Contrast:</span>
+        <button class="utility-btn contrast-btn" data-theme="dark">A</button>
+        <button class="utility-btn contrast-btn" data-theme="light">A</button>
+        <button class="utility-btn contrast-btn" data-theme="default">A</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label">Spacing:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
+      </div>
+      <div class="utility-group search-group">
+        <input type="text" id="search-input" placeholder="Search..." class="search-input">
+        <button id="search-btn" class="search-btn">Go</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Header -->   
+  <header>
+    <div class="topbar">
         <div class="container">
-            <div class="utility-group">
-                <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
-            </div>
-            <div class="utility-group">
-                <button id="screen-reader-access-btn" class="utility-btn">Screen Reader Access</button>
-            </div>
-            <div class="utility-group">
-                <span class="utility-label">Text Size:</span>
-                <button class="utility-btn text-size-btn" data-size="small">A⁻</button>
-                <button class="utility-btn text-size-btn" data-size="default">A</button>
-                <button class="utility-btn text-size-btn" data-size="large">A⁺</button>
-            </div>
-            <div class="utility-group">
-                <span class="utility-label">Contrast:</span>
-                <button class="utility-btn contrast-btn" data-theme="dark">A</button>
-                <button class="utility-btn contrast-btn" data-theme="light">A</button>
-                <button class="utility-btn contrast-btn" data-theme="default">A</button>
-            </div>
-            <div class="utility-group">
-                <span class="utility-label">Spacing:</span>
-                <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
-                <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
-            </div>
-            <div class="utility-group search-group">
-                <input type="text" id="search-input" placeholder="Search..." class="search-input">
-                <button id="search-btn" class="search-btn">Go</button>
-            </div>
+            <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
+            <h1>
+                Home Political Department<br>
+                <span>Government of Meghalaya</span>
+            </h1>
         </div>
     </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Header - Matches index.html -->
-    <header>
-        <div class="topbar">
-            <div class="container">
-                <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
-                <h1>
-                    Home (Political) Department<br>
-                    <span>Government of Meghalaya</span>
-                </h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <!-- Main Content -->
     <main class="container" id="main-content">
         <section class="content-section">
             <h2>Who We Are</h2>
@@ -77,6 +79,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.<br>
@@ -86,7 +89,5 @@
             <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
         </div>
     </footer>
-
-    <script src="js/index.js"></script>
 </body>
 </html>

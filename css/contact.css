@@ -1,104 +1,310 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  a {
-    color: #005aa7;
-    text-decoration: none;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem 2rem;
-  }
-
-  /* Header */
-  .topbar {
-    background-color: #003366;
-    color: white;
-    padding: 1rem 0;
+/* Base Styles */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #005aa7;
+  --accent-color: #ffcc00;
+  --text-color: #333;
+  --bg-color: #f4f6f9;
+  --white: #ffffff;
+  --black: #000000;
+  --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
 }
 
-/* Adjust the topbar container */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Bar */
+.utility-bar {
+  background-color: #004080; /* A slightly lighter shade than the header */
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 2px solid var(--secondary-color); /* Optional: Add a border for further distinction */
+}
+
+.utility-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.utility-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.utility-label {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.utility-btn, .search-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.utility-btn:hover, .search-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-group {
+  margin-left: auto;
+  display: flex;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+  border-radius: 0 3px 3px 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 5px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+/* Header Styles */
+.topbar {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 0;
+}
+
 .topbar .container {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Reduce the gap between the logo and the text */
+  gap: 1rem;
 }
 
-/* Adjust the logo */
 .logo {
   height: 80px;
-  margin-right: 0; /* Remove the auto margin */
 }
 
-/* Adjust the header text */
+/* Header Text Styling */
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-align: left; /* Align the text to the left */
-  line-height: 1.4;
+  font-size: 2rem; /* Consistent font size */
+  font-weight: 600; /* Consistent font weight */
+  line-height: 1.4; /* Consistent line height */
+  color: var(--white); /* Consistent text color */
+  text-align: left; /* Align text to the left */
   margin: 0; /* Remove extra margins */
 }
 
 header h1 br + span {
-    color: #ffcc00; /* Change color for "Government of Meghalaya" */
+  color: var(--accent-color); /* Highlight the second line with accent color */
+  font-weight: 700; /* Make the second line slightly bolder */
 }
-  
-  /* Navigation */
-  nav {
-    background-color: #005aa7;
-  }
-  
+
+
+/* Navigation */
+/* Navigation Styles */
+nav {
+  background-color: #005aa7;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 1rem;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none; /* Removed underline */
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect - Bottom Border */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Active Link Style */
+nav a.active {
+  color: var(--accent-color);
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+/* Tap/Click Effect */
+nav a:active {
+  transform: scale(0.98);
+}
+
+/* Scrolled State */
+nav.scrolled {
+  padding: 0.3rem 0;
+  background-color: rgba(0, 90, 167, 0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
   }
   
   nav li {
-    margin: 0 1rem;
+    margin: 0.3rem 0;
+    width: 100%;
+    text-align: center;
   }
   
   nav a {
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
   }
   
-  nav a:hover {
-    text-decoration: underline;
+  nav a::after {
+    display: none;
   }
-/* Footer Styles */
+  
+  nav.scrolled {
+    padding: 0.2rem 0;
+  }
+}
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+}
+
+.content-section a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.content-section a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
-  background-color: #ffffff; /* Light gray background */
-  color: #333; /* Dark text color */
-  padding: 20px 0; /* Spacing around the footer content */
-  text-align: center; /* Center-align the text */
-  font-size: 14px; /* Adjust font size */
-  line-height: 1.6; /* Improve readability */
+  background: var(--white);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
 }
 
-footer .container {
-  max-width: 1200px; /* Limit the width of the footer content */
-  margin: 0 auto; /* Center the content horizontally */
-  padding: 0 15px; /* Add some padding for smaller screens */
+.nic-logo {
+  height: 50px;
+  margin-top: 15px;
 }
 
-footer img.nic-logo {
-  margin-top: 10px; /* Add spacing above the logo */
-  width: 100px; /* Adjust the logo size */
-  height: auto; /* Maintain aspect ratio */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .utility-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-group {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 5px 0;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+  }
 }

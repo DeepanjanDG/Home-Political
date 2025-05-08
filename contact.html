@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Home (Political) Department</title>
-    <link rel="stylesheet" href="css/contact.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Home (Political) Department</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <!-- Accessibility Toolbar -->
+  <!-- Accessibility Toolbar -->
   <div class="utility-bar">
     <div class="container">
       <div class="utility-group">
-        <!--<a href="#main-content" class="skip-link">Skip to main content</a>-->
         <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
       </div>
       <div class="utility-group">
-        <button id="screen-reader-btn" class="utility-btn">Screen Reader Access</button>
-        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <button id="screen-reader-access-btn" class="utility-btn">Screen Reader Access</button>
       </div>
       <div class="utility-group">
         <span class="utility-label">Text Size:</span>
@@ -41,45 +40,28 @@
       </div>
     </div>
   </div>
-    <!-- Header -->
-    <div class="utility-bar">
-        <a href="#content" class="skip-link">Skip to main content</a> |
-        <a href="screen.html" target="_self">Screen Reader Access</a> |
-        Text Size 
-        <button onclick="adjustTextSize('small')">A<sup>-</sup></button>
-        <button onclick="adjustTextSize('default')">A</button>
-        <button onclick="adjustTextSize('large')">A<sup>+</sup></button> |
-        Contrast Options
-        <button onclick="setContrast('black')">A</button>
-        <button onclick="setContrast('white')">A</button>
-        <button onclick="setContrast('default')">A</button> |
-        Character Spacing
-        <button onclick="toggleSpacing(true)">on</button>
-        <button onclick="toggleSpacing(false)">off</button> |
-        Search
-        <input type="text" id="search-box" placeholder="Search...">
-        <button onclick="performSearch()">Go</button>
+
+  <!-- Header -->
+  <header>
+    <div class="topbar">
+      <div class="container">
+        <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
+        <h1>
+          Home Political Department<br>
+          <span>Government of Meghalaya</span>
+        </h1>
       </div>
-    <header>
-        
-        <div class="topbar">
-            <div class="container">
-                <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
-                <h1>
-                    Home (Political) Department<br>
-                    <span>Government of Meghalaya</span>
-                </h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
     <div class="container">
         <h1>Contact Us</h1>
         <div class="contact-info">
