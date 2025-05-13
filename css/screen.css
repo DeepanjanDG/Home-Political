@@ -166,34 +166,67 @@ header h1 br + span {
     text-decoration: underline;
   }
   
-  /* Main Content */
-  main {
-    padding: 2rem;
-    background-color: #fff;
-    min-height: 60vh;
-  }
-  
-  main h1 {
-    font-size: 2rem;
-    color: #003366;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 0.5rem;
-  }
-  
-  main p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  main ul {
-    padding-left: 1.5rem;
-  }
-  
-  main li {
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-  }
+ /* Main Content Section */
+.content-section {
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h1, .content-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.content-section ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.content-section table th, .content-section table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.content-section table th {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.content-section table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.content-section table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.content-section table a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.content-section table a:hover {
+  text-decoration: underline;
+}
   
   /* Footer */
   footer {
