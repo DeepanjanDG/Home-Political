@@ -32,11 +32,12 @@ body {
 
 /* Utility Bar */
 .utility-bar {
-  background-color: var(--primary-color);
+  background-color: #004080; /* A slightly lighter shade than the header */
   color: var(--white);
   padding: 10px 0;
   font-size: 14px;
-} 
+  border-bottom: 2px solid var(--secondary-color); /* Optional: Add a border for further distinction */
+}
 
 .utility-bar .container {
   display: flex;
@@ -73,7 +74,7 @@ body {
 .search-group {
   margin-left: auto;
   display: flex;
-} 
+}
 
 .search-input {
   padding: 5px 10px;
@@ -107,8 +108,8 @@ body {
 
 /* Header Styles */
 .topbar {
-  background-color: #003366;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1rem 0;
 }
 
@@ -122,14 +123,20 @@ body {
   height: 80px;
 }
 
+/* Header Text Styling */
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 2rem; /* Consistent font size */
+  font-weight: 600; /* Consistent font weight */
+  line-height: 1.4; /* Consistent line height */
+  color: black; /* Updated text color to black */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove extra margins */
 }
 
 header h1 br + span {
-  color: var(--white); /* Changed from #ffcc00 to white */
+  color: var(--black); /* Change "Government of Meghalaya" to black */
+  font-size: 1.5rem; /* Make it smaller */
+  font-weight: 600; /* Slightly lighter weight */
 }
 
 
@@ -238,16 +245,54 @@ nav.scrolled {
 .main-wrapper {
   display: flex;
   gap: 20px;
-  margin: 20px auto; /* Add vertical spacing */
-  max-width: 1200px; /* Match container width */
-  padding: 0 20px; /* Match container padding */
+  margin: 20px auto;
+  max-width: 1400px; /* Increased the max-width for a larger container */
+  padding: 0 30px; /* Added more padding for better spacing */
 }
 
+/* Main Content */
+main {
+  flex: 1;
+  padding: 2rem; /* Increased padding for better spacing */
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 /* Sidebar */
 .sidebar {
   flex: 0 0 250px;
-  height: fit-content; /* Prevent height overflow */
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-right: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+  color: var(--secondary-color);
 }
 
 /* Remove container from around main content */
@@ -360,14 +405,13 @@ footer {
   background: var(--white);
   padding: 20px 0;
   text-align: center;
-  clear: both; /* Ensure the footer clears any floating elements */
-  margin-top: auto; /* Push the footer to the bottom if the content is short */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better separation */
+  margin-top: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nic-logo {
-  height: 30%;
-  margin-top: 5px;
+  height: 50px;
+  margin-top: 10px;
 }
 
 /* Modal */

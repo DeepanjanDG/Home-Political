@@ -1,55 +1,143 @@
-/* Reset and Base Styles */
+/* Base Styles */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #005aa7;
+  --accent-color: #ffcc00;
+  --text-color: #333;
+  --bg-color: #f4f6f9;
+  --white: #ffffff;
+  --black: #000000;
+  --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Container Utility */
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem 2rem;
-  }
-  
-  /* Header Styling */
-  .topbar {
-    background-color: #003366;
-    color: white;
-    padding: 1rem 0;
-  }
-  
-  .topbar .container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .logo {
-    height: 80px;
-  }
-  
-  header h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: left;
-    line-height: 1.4;
-  }
-  
-  header h1 br + span {
-    color: #ffcc00;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Bar */
+.utility-bar {
+  background-color: #004080; /* A slightly lighter shade than the header */
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 2px solid var(--secondary-color); /* Optional: Add a border for further distinction */
+}
+
+.utility-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.utility-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.utility-label {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.utility-btn, .search-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.utility-btn:hover, .search-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-group {
+  margin-left: auto;
+  display: flex;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-btn {
+  border-radius: 0 3px 3px 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 5px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+  /* Header Styles */
+.topbar {
+  background-color: white;
+  color: black;
+  padding: 1rem 0;
+}
+
+.topbar .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 80px;
+}
+
+/* Header Text Styling */
+header h1 {
+  font-size: 2rem; /* Consistent font size */
+  font-weight: 600; /* Consistent font weight */
+  line-height: 1.4; /* Consistent line height */
+  color: black; /* Updated text color to black */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Remove extra margins */
+}
+
+header h1 br + span {
+  color: var(--black); /* Change "Government of Meghalaya" to black */
+  font-size: 1.5rem; /* Make it smaller */
+  font-weight: 600; /* Slightly lighter weight */
+}
   
   /* Navigation Bar */
   nav {
