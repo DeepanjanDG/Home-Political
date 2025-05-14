@@ -78,28 +78,41 @@ if (skipToMainContentBtn) {
 //       savedSize === 'large' ? '18px' : '16px';
 //   }
 
-//   // Contrast Mode
-//   const savedTheme = localStorage.getItem('contrastMode');
-//   if (savedTheme) {
-//     document.body.classList.remove('contrast-dark', 'contrast-light');
-//     if (savedTheme === 'dark') {
-//       document.body.style.backgroundColor = 'black';
-//       document.body.style.color = 'white';
-//     } else if (savedTheme === 'light') {
-//       document.body.style.backgroundColor = 'white';
-//       document.body.style.color = 'black';
-//     } else {
-//       document.body.style.backgroundColor = '';
-//       document.body.style.color = '';
-//     }
-//     if (savedTheme !== 'default') {
-//       document.body.classList.add(`contrast-${savedTheme}`);
-//     }
-//   }
 
-//   // Character Spacing
-//   const savedSpacing = localStorage.getItem('charSpacing');
-//   if (savedSpacing === 'wide') {
-//     document.body.classList.add('wide-spacing');
-//   }
-// });
+// Contrast Mode Toggle
+contrastButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const theme = button.dataset.theme;
+    // Remove all contrast classes
+    document.body.classList.remove('contrast-yellow-black', 'contrast-black-white', 'contrast-default');
+    // Apply selected contrast
+    if (theme === 'yellow-black') {
+      document.body.classList.add('contrast-yellow-black');
+    } else if (theme === 'black-white') {
+      document.body.classList.add('contrast-black-white');
+    } else {
+      document.body.classList.add('contrast-default');
+    }
+    localStorage.setItem('contrastMode', theme);
+  });
+});
+
+// Load saved contrast preference on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('contrastMode');
+  document.body.classList.remove('contrast-yellow-black', 'contrast-black-white', 'contrast-default');
+  if (savedTheme === 'yellow-black') {
+    document.body.classList.add('contrast-yellow-black');
+  } else if (savedTheme === 'black-white') {
+    document.body.classList.add('contrast-black-white');
+  } else {
+    document.body.classList.add('contrast-default');
+  }
+});
+
+
+  // Character Spacing
+const savedSpacing = localStorage.getItem('charSpacing');
+if (savedSpacing === 'wide') {
+  document.body.classList.add('wide-spacing');
+}
