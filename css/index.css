@@ -5,7 +5,7 @@
   --accent-color: #ffcc00;
   --text-color: #333;
   --bg-color: #ffffff;
-  --white: #ffffff;
+  --white: #ffffffc0;
   --black: #000000;
   --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
   
@@ -25,11 +25,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Headings use Montserrat */
-h1, h2, h3, h4, h5, h6,
-header h1, header h2, header h3, header h4, header h5, header h6 {
-  font-family: var(--font-heading);
-}
 
 /* Yellow on Black Contrast */
 body.contrast-yellow-black, body.contrast-yellow-black * {
@@ -414,7 +409,7 @@ main .container {
 
 /* Hero Section */
 .hero {
-  background: url('../images/Meghalaya.jpg') center/cover;
+  /* background: url('../images/Meghalaya.jpg') center/cover; */
   height: 300px;
   display: flex;
   align-items: center;
@@ -471,18 +466,89 @@ main .container {
   }
 }
 
+/* ...existing code... */
+
 /* Footer */
 footer {
-  background: var(--white);
-  padding: 20px 0;
-  text-align: center;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 30px 0 0 0;
+  text-align: left;
   margin-top: 20px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+.footer-copy {
+  flex: 1 1 250px;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-sections {
+  display: flex;
+  flex: 2 1 500px;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  min-width: 150px;
+}
+
+.footer-section h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.97rem;
+  transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--accent-color);
+}
+
 .nic-logo {
-  height: 50px;
-  margin-top: 10px;
+  height: 40px;
+  margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px 20px 10px;
+  }
+  .footer-sections {
+    justify-content: flex-start;
+    gap: 25px;
+  }
 }
 
 /* Modal */

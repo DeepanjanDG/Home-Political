@@ -18,15 +18,15 @@
       </div>
       <div class="utility-group">
         <span class="utility-label">Text Size:</span>
-        <button class="utility-btn text-size-btn" data-size="small">A⁻</button>
-        <button class="utility-btn text-size-btn" data-size="default">A</button>
-        <button class="utility-btn text-size-btn" data-size="large">A⁺</button>
+        <button class="utility-btn text-size-btn" data-size="small" title="Decrease text size">&#8722;A</button>
+        <button class="utility-btn text-size-btn" data-size="default" title="Default text size">A</button>
+        <button class="utility-btn text-size-btn" data-size="large" title="Increase text size">A&#43;</button>
       </div>
       <div class="utility-group">
         <span class="utility-label">Contrast:</span>
-        <button class="utility-btn contrast-btn" data-theme="dark">A</button>
-        <button class="utility-btn contrast-btn" data-theme="light">A</button>
-        <button class="utility-btn contrast-btn" data-theme="default">A</button>
+        <button class="utility-btn contrast-btn contrast-default-btn" data-theme="default" title="Default Contrast">A</button>
+        <button class="utility-btn contrast-btn contrast-yellow-black-btn" data-theme="yellow-black" title="Yellow on Black">A</button>
+        <button class="utility-btn contrast-btn contrast-black-white-btn" data-theme="black-white" title="Black on White">A</button>
       </div>
       <div class="utility-group">
         <span class="utility-label">Spacing:</span>
@@ -56,13 +56,13 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="#reports">Reports</a></li>
-        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="#links">Related Links</a></li>
         <li><a href="#sitemap">Sitemap</a></li>
       </ul>
     </nav>
-</header>
+  </header>
 
     <!-- Main Content -->
     <main class="container" id="main-content">
@@ -81,15 +81,43 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.<br>
-                Content Owned and Updated by Home (Political) Department, Government of Meghalaya.<br>
-                All queries/ comments regarding the content on this site may be sent to:</p>
-            <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
-            <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
-        </div>
-    </footer>
+  <footer>
+  <div class="footer-main">
+    <div class="footer-copy">
+      <p>
+        Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
+      </p>
+      <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
+      <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+    </div>
+    <div class="footer-sections">
+      <div class="footer-section">
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="#">RTI</a></li>
+          <li><a href="#">Tenders</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Access</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Other Resources</h4>
+        <ul>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
     <script src="js/index.js"></script>
 </body>
 </html>

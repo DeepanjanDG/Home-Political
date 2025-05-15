@@ -4,10 +4,11 @@
   --secondary-color: #005aa7;
   --accent-color: #ffcc00;
   --text-color: #333;
-  --bg-color: #f4f6f9;
+  --bg-color: #ffffff;
   --white: #ffffff;
   --black: #000000;
   --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
+  
 }
 
 * {
@@ -22,6 +23,38 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   transition: all 0.3s ease;
+}
+
+/* Yellow on Black Contrast */
+body.contrast-yellow-black, body.contrast-yellow-black * {
+  background-color: #000 !important;
+  color: #ff0 !important;
+  border-color: #ff0 !important;
+}
+body.contrast-yellow-black a,
+body.contrast-yellow-black h1,
+body.contrast-yellow-black h2,
+body.contrast-yellow-black h3,
+body.contrast-yellow-black h4,
+body.contrast-yellow-black h5,
+body.contrast-yellow-black h6 {
+  color: #ff0 !important;
+}
+
+/* Black on White Contrast */
+body.contrast-black-white, body.contrast-black-white * {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+body.contrast-black-white a,
+body.contrast-black-white h1,
+body.contrast-black-white h2,
+body.contrast-black-white h3,
+body.contrast-black-white h4,
+body.contrast-black-white h5,
+body.contrast-black-white h6 {
+  color: #000 !important;
 }
 
 .container {
@@ -106,6 +139,38 @@ body {
   left: 10px;
 }
 
+/* Contrast Button Visuals */
+.contrast-default-btn {
+  background: linear-gradient(90deg, #fff 50%, #e0e0e0 50%);
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+.contrast-yellow-black-btn {
+  background: #000;
+  color: #ff0;
+  border: 1px solid #ff0;
+}
+
+.contrast-black-white-btn {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.utility-btn.contrast-btn {
+  min-width: 2.5em;
+  font-weight: bold;
+  margin-right: 4px;
+  margin-left: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.utility-btn.contrast-btn:focus {
+  outline: 2px solid #005aa7;
+  outline-offset: 2px;
+}
+
   /* Header Styles */
 .topbar {
   background-color: white;
@@ -165,6 +230,7 @@ header h1 br + span {
   nav a:hover {
     text-decoration: underline;
   }
+  
   
  /* Main Content Section */
 .content-section {
@@ -228,25 +294,87 @@ header h1 br + span {
   text-decoration: underline;
 }
   
+
   /* Footer */
-  footer {
-    background-color: #ffffff;
-    color: #333;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.6;
+footer {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 30px 0 0 0;
+  text-align: left;
+  margin-top: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+.footer-copy {
+  flex: 1 1 250px;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-sections {
+  display: flex;
+  flex: 2 1 500px;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  min-width: 150px;
+}
+
+.footer-section h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.97rem;
+  transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--accent-color);
+}
+
+.nic-logo {
+  height: 40px;
+  margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px 20px 10px;
   }
-  
-  footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+  .footer-sections {
+    justify-content: flex-start;
+    gap: 25px;
   }
-  
-  footer img.nic-logo {
-    margin-top: 10px;
-    width: 100px;
-    height: auto;
-  }
+}
   

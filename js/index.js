@@ -1,7 +1,5 @@
 // DOM Elements
-const textSizeButtons = document.querySelectorAll('.utility-btn[data-size]');
 const contrastButtons = document.querySelectorAll('.utility-btn[data-theme]');
-const spacingButtons = document.querySelectorAll('.utility-btn[data-spacing]');
 const searchBtn = document.querySelector('.search-btn');
 const screenReaderBtn = document.getElementById('screen-reader-access-btn');
 const searchInput = document.getElementById('search-input');
@@ -18,37 +16,64 @@ if (skipToMainContentBtn) {
   });
 }
 
-// Text Size Adjustment
-// textSizeButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const size = button.dataset.size;
-//     document.documentElement.style.fontSize =
-//       size === 'small' ? '14px' :
-//       size === 'large' ? '18px' : '16px';
-//     localStorage.setItem('textSize', size);
-//   });
-// });
+// Text Size Functionality
+const textSizeButtons = document.querySelectorAll('.text-size-btn');
+let fontSizeLevels = [14, 16, 18, 20, 22]; // px
+let currentLevel = 1; // Default is 16px (index 1)
 
-// Contrast Mode Toggle
-// contrastButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const theme = button.dataset.theme;
-//     document.body.classList.remove('contrast-dark', 'contrast-light');
-//     if (theme !== 'default') {
-//       document.body.classList.add(`contrast-${theme}`);
-//     }
-//     localStorage.setItem('contrastMode', theme);
-//   });
-// });
+function applyFontSize(level) {
+  document.documentElement.style.fontSize = fontSizeLevels[level] + 'px';
+  localStorage.setItem('fontSizeLevel', level);
+}
 
-// Character Spacing Toggle
-// spacingButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     const spacing = button.dataset.spacing === 'wide';
-//     document.body.classList.toggle('wide-spacing', spacing);
-//     localStorage.setItem('charSpacing', spacing ? 'wide' : 'normal');
-//   });
-// });
+textSizeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const size = btn.dataset.size;
+    if (size === 'small' && currentLevel > 0) {
+      currentLevel--;
+    } else if (size === 'large' && currentLevel < fontSizeLevels.length - 1) {
+      currentLevel++;
+    } else if (size === 'default') {
+      currentLevel = 1;
+    }
+    applyFontSize(currentLevel);
+  });
+});
+
+// Load saved font size on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLevel = localStorage.getItem('fontSizeLevel');
+  if (savedLevel !== null) {
+    currentLevel = parseInt(savedLevel, 10);
+    applyFontSize(currentLevel);
+  }
+});
+
+// Character Spacing Functionality
+const spacingButtons = document.querySelectorAll('.spacing-btn');
+spacingButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.spacing === 'wide') {
+      document.body.classList.add('wide-spacing');
+      localStorage.setItem('charSpacing', 'wide');
+    } else {
+      document.body.classList.remove('wide-spacing');
+      localStorage.setItem('charSpacing', 'normal');
+    }
+  });
+});
+
+// Load saved character spacing on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedSpacing = localStorage.getItem('charSpacing');
+  if (savedSpacing === 'wide') {
+    document.body.classList.add('wide-spacing');
+  } else {
+    document.body.classList.remove('wide-spacing');
+  }
+});
+
+
 
 // Search Functionality
 // if (searchBtn) {
@@ -67,17 +92,6 @@ if (skipToMainContentBtn) {
      window.location.href = 'screen.html'; // Redirect to screen.html
   });
  }
-
-// Load saved preferences
-// window.addEventListener('DOMContentLoaded', () => {
-//   // Text Size
-//   const savedSize = localStorage.getItem('textSize');
-//   if (savedSize) {
-//     document.documentElement.style.fontSize =
-//       savedSize === 'small' ? '14px' :
-//       savedSize === 'large' ? '18px' : '16px';
-//   }
-
 
 // Contrast Mode Toggle
 contrastButtons.forEach(button => {
