@@ -5,7 +5,7 @@
   --accent-color: #ffcc00;
   --text-color: #333;
   --bg-color: #ffffff;
-  --white: #ffffff;
+  --white: #ffffffc0;
   --black: #000000;
   --font-main: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
   
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -173,8 +173,8 @@ body.contrast-black-white h6 {
 
 /* Header Styles */
 .topbar {
-  background-color: #003366;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1rem 0;
 }
 
@@ -193,14 +193,15 @@ header h1 {
   font-size: 2rem; /* Consistent font size */
   font-weight: 600; /* Consistent font weight */
   line-height: 1.4; /* Consistent line height */
-  color: var(--white); /* Consistent text color */
+  color: black; /* Updated text color to black */
   text-align: left; /* Align text to the left */
   margin: 0; /* Remove extra margins */
 }
 
 header h1 br + span {
-  color: var(--accent-color); /* Highlight the second line with accent color */
-  font-weight: 700; /* Make the second line slightly bolder */
+  color: var(--black); /* Change "Government of Meghalaya" to black */
+  font-size: 1.5rem; /* Make it smaller */
+  font-weight: 600; /* Slightly lighter weight */
 }
 
 
