@@ -306,32 +306,34 @@ nav.scrolled {
   }
 }
 
-/* Content Sections */
-.content-section {
-  margin-bottom: 2rem;
+/* Add this to your contact.css or index.css for the contact section box */
+.contact-section {
+  max-width: 600px;
+  margin: 40px auto 30px auto;
   background: var(--white);
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
 }
 
-.content-section h2 {
+.contact-section h1 {
   color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--secondary-color);
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.content-section p {
-  margin-bottom: 1rem;
+.contact-info p {
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
 }
 
-.content-section a {
+.contact-info a {
   color: var(--secondary-color);
   text-decoration: none;
 }
 
-.content-section a:hover {
+.contact-info a:hover {
   text-decoration: underline;
 }
 

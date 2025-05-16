@@ -4,6 +4,7 @@ const searchBtn = document.querySelector('.search-btn');
 const screenReaderBtn = document.getElementById('screen-reader-access-btn');
 const searchInput = document.getElementById('search-input');
 
+
 // Smooth scrolling for "Skip to main content" button
 const skipToMainContentBtn = document.getElementById('skip-to-main-content-btn');
 if (skipToMainContentBtn) {
@@ -16,6 +17,7 @@ if (skipToMainContentBtn) {
   });
 }
 
+
 // Text Size Functionality
 const textSizeButtons = document.querySelectorAll('.text-size-btn');
 let fontSizeLevels = [14, 16, 18, 20, 22]; // px
@@ -25,6 +27,7 @@ function applyFontSize(level) {
   document.documentElement.style.fontSize = fontSizeLevels[level] + 'px';
   localStorage.setItem('fontSizeLevel', level);
 }
+
 
 textSizeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -40,6 +43,7 @@ textSizeButtons.forEach(btn => {
   });
 });
 
+
 // Load saved font size on page load
 window.addEventListener('DOMContentLoaded', () => {
   const savedLevel = localStorage.getItem('fontSizeLevel');
@@ -48,6 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     applyFontSize(currentLevel);
   }
 });
+
 
 // Character Spacing Functionality
 const spacingButtons = document.querySelectorAll('.spacing-btn');
@@ -63,6 +68,7 @@ spacingButtons.forEach(btn => {
   });
 });
 
+
 // Load saved character spacing on page load
 window.addEventListener('DOMContentLoaded', () => {
   const savedSpacing = localStorage.getItem('charSpacing');
@@ -72,7 +78,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('wide-spacing');
   }
 });
-
 
 
 // Search Functionality
@@ -86,12 +91,14 @@ window.addEventListener('DOMContentLoaded', () => {
 //   });
 // }
 
+
 // Screen Reader Access
  if (screenReaderBtn) {
    screenReaderBtn.addEventListener('click', () => {
      window.location.href = 'screen.html'; // Redirect to screen.html
   });
  }
+
 
 // Contrast Mode Toggle
 contrastButtons.forEach(button => {
@@ -110,6 +117,7 @@ contrastButtons.forEach(button => {
     localStorage.setItem('contrastMode', theme);
   });
 });
+
 
 // Load saved contrast preference on page load
 window.addEventListener('DOMContentLoaded', () => {
