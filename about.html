@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Accessibility Toolbar -->
-  <div class="utility-bar">
+    <div class="utility-bar">
     <div class="container">
       <div class="utility-group">
         <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
@@ -38,10 +38,10 @@
         <button id="search-btn" class="search-btn">Go</button>
       </div>
     </div>
-  </div>
+    </div>
 
     <!-- Header -->   
-  <header>
+    <header>
     <div class="topbar">
         <div class="container">
             <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
@@ -62,11 +62,38 @@
         <li><a href="#sitemap">Sitemap</a></li>
       </ul>
     </nav>
-  </header>
+    </header>
 
     <!-- Main Content -->
-    <main class="container" id="main-content">
-        <section class="content-section">
+    <div class="main-wrapper">
+      <main id="main-content">
+        <section class="hero">
+          <h2>About the Department</h2>
+        </section>
+        
+        <div class="main-content-with-sidebar">
+          <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3>Main Content</h3>
+            <ul>
+              <li><a href="scheme.html">Overview</a></li>
+              <li><a href="about.html">About the Department</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section">
+            <h3>Documents</h3>
+            <ul>
+            <li><a href="#">Annual Report 2024</a></li>
+            <li><a href="#">Policy Guidelines</a></li>
+            <li><a href="#">Official Notifications</a></li>
+            </ul>
+          </div>
+          </aside>
+
+      <!-- Main Content -->
+       <div class="main-content">
+        <section class="content-section" id="main-content">
             <h2>Who We Are</h2>
             <p>Welcome to our platform! We are dedicated to providing insightful and balanced political content to help you stay informed and engaged. Our mission is to foster understanding and dialogue on important issues.</p>
         </section>
@@ -78,7 +105,9 @@
             <h2>Our Team</h2>
             <p>Our team consists of passionate individuals with expertise in political analysis, journalism, and community engagement. Together, we strive to deliver high-quality content that matters to you.</p>
         </section>
+        </div>
     </main>
+    </div>
 
     <!-- Footer -->
   <footer>
