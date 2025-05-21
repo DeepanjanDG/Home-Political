@@ -345,7 +345,7 @@ nav a:active {
 
 /* Content Section Styles */
 .content-section {
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   background: var(--white);
   padding: 2rem;
   border-radius: 5px;
