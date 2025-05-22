@@ -138,3 +138,20 @@ const savedSpacing = localStorage.getItem('charSpacing');
 if (savedSpacing === 'wide') {
   document.body.classList.add('wide-spacing');
 }
+
+// JavaScript for expandable key subjects
+  document.addEventListener('DOMContentLoaded', function() {
+    const expandBtn = document.querySelector('.expand-subjects-btn');
+    const container = document.querySelector('.key-subjects-container');
+    
+    expandBtn.addEventListener('click', function() {
+      container.classList.toggle('key-subjects-expanded');
+      
+      // Update button text
+      if (container.classList.contains('key-subjects-expanded')) {
+        expandBtn.innerHTML = 'Show Less Subjects <span class="icon">▲</span>';
+      } else {
+        expandBtn.innerHTML = 'Show More Subjects <span class="icon">▼</span>';
+      }
+    });
+  });

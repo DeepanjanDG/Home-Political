@@ -347,9 +347,9 @@ footer {
 }
 
 .footer-copy {
-  flex: 1 1 250px;
+  flex: 1 1 350px;
   min-width: 220px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .footer-sections {
