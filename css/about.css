@@ -187,6 +187,26 @@ body.contrast-black-white h6 {
   height: 80px;
 }
 
+/* Logo and title container */
+.logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo link styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+}
+
+/* Optional hover effect */
+.logo-link:hover {
+  opacity: 0.9;
+}
+
 /* Header Text Styling */
 header h1 {
   font-size: 2rem; /* Consistent font size */

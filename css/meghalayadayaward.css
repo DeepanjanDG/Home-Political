@@ -1,0 +1,549 @@
+/* Base Styles */
+:root {
+  --primary-color: #003366;
+  --secondary-color: #005aa7;
+  --accent-color: #ffcc00;
+  --text-color: #333;
+  --bg-color: #ffffff;
+  --white: #ffffffc0;
+  --black: #000000;
+  --font-main: 'Times New Roman', Times, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* Yellow on Black Contrast */
+body.contrast-yellow-black, body.contrast-yellow-black * {
+  background-color: #000 !important;
+  color: #ff0 !important;
+  border-color: #ff0 !important;
+}
+body.contrast-yellow-black a,
+body.contrast-yellow-black h1,
+body.contrast-yellow-black h2,
+body.contrast-yellow-black h3,
+body.contrast-yellow-black h4,
+body.contrast-yellow-black h5,
+body.contrast-yellow-black h6 {
+  color: #ff0 !important;
+}
+
+/* Black on White Contrast */
+body.contrast-black-white, body.contrast-black-white * {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+body.contrast-black-white a,
+body.contrast-black-white h1,
+body.contrast-black-white h2,
+body.contrast-black-white h3,
+body.contrast-black-white h4,
+body.contrast-black-white h5,
+body.contrast-black-white h6 {
+  color: #000 !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Bar */
+.utility-bar {
+  background-color: #004080;
+  color: var(--white);
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+.utility-bar .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+.utility-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.utility-label {
+  color: var(--white);
+  font-weight: 400;
+}
+.utility-btn, .search-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.utility-btn:hover, .search-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.search-group {
+  margin-left: auto;
+  display: flex;
+}
+.search-input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.search-btn {
+  border-radius: 0 3px 3px 0;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 5px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 10px;
+}
+
+/* Contrast Button Visuals */
+.contrast-default-btn {
+  background: linear-gradient(90deg, #fff 50%, #e0e0e0 50%);
+  color: #222;
+  border: 1px solid #ccc;
+}
+.contrast-yellow-black-btn {
+  background: #000;
+  color: #ff0;
+  border: 1px solid #ff0;
+}
+.contrast-black-white-btn {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+.utility-btn.contrast-btn {
+  min-width: 2.5em;
+  font-weight: bold;
+  margin-right: 4px;
+  margin-left: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.utility-btn.contrast-btn:focus {
+  outline: 2px solid #005aa7;
+  outline-offset: 2px;
+}
+
+/* Header Styles */
+.topbar {
+  background-color: white;
+  color: black;
+  padding: 1rem 0;
+}
+.topbar .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo {
+  height: 80px;
+}
+
+/* Logo and title container */
+.logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo link styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+}
+
+/* Optional hover effect */
+.logo-link:hover {
+  opacity: 0.9;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: black;
+  text-align: left;
+  margin: 0;
+}
+header h1 br + span {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+nav {
+  background-color: #005aa7;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+nav.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+nav li {
+  margin: 0 1rem;
+  position: relative;
+}
+nav a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+nav a.active {
+  color: var(--accent-color);
+}
+nav a.active::after {
+  width: 100%;
+}
+nav a:active {
+  transform: scale(0.98);
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  nav li {
+    margin: 0.3rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  nav a {
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+  }
+  nav a::after {
+    display: none;
+  }
+  nav.scrolled {
+    padding: 0.2rem 0;
+  }
+}
+
+/* Main Wrapper and Flex Layout */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1400px;
+  padding: 0 30px;
+}
+
+.content-flex {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+.sidebar-section h3 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-section li {
+  margin-bottom: 8px;
+}
+.sidebar-section a {
+  display: block;
+  padding: 12px 15px;
+  color: #34495e;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+}
+.sidebar-section a:hover {
+  background: #e3f2fd;
+  border-color: #bbdefb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #0d47a1;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+}
+
+.main-content-with-sidebar {
+  display: flex;
+  gap: 20px;
+}
+.main-content {
+  flex: 1 1 0%;
+}
+
+@media (max-width: 900px) {
+  .main-content-with-sidebar {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Hero Section */
+.hero {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 30px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.hero h2 {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+/* Content Section */
+.content-section {
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.content-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  font-family: var(--font-heading);
+}
+.content-section p {
+  font-size: 1.08rem;
+  margin-bottom: 1.5rem;
+}
+
+/* PDF Button Styles - Add this to your existing CSS */
+.pdf-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 1.5rem 0;
+}
+
+.pdf-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.pdf-button:hover {
+  background-color: #004080;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Make sure utility-btn isn't overriding our PDF buttons */
+.content-section .utility-btn {
+  all: unset; /* Reset any utility-btn styles in content sections */
+}
+
+/* PDF Viewer */
+.content-section iframe {
+  width: 100%;
+  min-height: 400px;
+  height: 600px;
+  border: none;
+  border-radius: 8px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 0 10px;
+  }
+  .content-section {
+    padding: 1.5rem;
+  }
+  .hero {
+    height: auto;
+    padding: 30px 0;
+  }
+  .hero h2 {
+    font-size: 1.3rem;
+    padding: 10px 10px;
+  }
+  .content-section iframe {
+    min-height: 250px;
+    height: 350px;
+  }
+}
+
+/* Footer */
+footer {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 30px 0 0 0;
+  text-align: left;
+  margin-top: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+.footer-copy {
+  flex: 1 1 250px;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+.footer-sections {
+  display: flex;
+  flex: 2 1 500px;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.footer-section {
+  min-width: 150px;
+}
+.footer-section h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.97rem;
+  transition: color 0.2s;
+}
+.footer-section ul li a:hover {
+  color: var(--accent-color);
+}
+.nic-logo {
+  height: 40px;
+  margin-top: 15px;
+}
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px 20px 10px;
+  }
+  .footer-sections {
+    justify-content: flex-start;
+    gap: 25px;
+  }
+}
+
+/* Accessibility Features */
+body.wide-spacing {
+  letter-spacing: 1px;
+}

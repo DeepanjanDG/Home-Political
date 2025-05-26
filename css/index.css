@@ -170,6 +170,27 @@ body.contrast-black-white h6 {
 .logo {
   height: 80px;
 }
+
+/* Logo and title container */
+.logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo link styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+}
+
+/* Optional hover effect */
+.logo-link:hover {
+  opacity: 0.9;
+}
+
 header h1 {
   font-size: 2rem;
   font-weight: 600;
@@ -376,6 +397,69 @@ nav a:active {
     margin-bottom: 1.2rem;
   }
 }
+
+/* Additional styles for updates section */
+    .updates-section {
+      margin-top: 2rem;
+    }
+    
+    .updates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+    
+    .update-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .update-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .update-title {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .update-date {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .update-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .update-btn {
+      padding: 8px 15px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+    
+    .update-btn:hover {
+      background-color: #004080;
+    }
+    
+    @media (max-width: 768px) {
+      .updates-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
 /* Additional CSS for expandable key subjects */
     .key-subjects-container {
