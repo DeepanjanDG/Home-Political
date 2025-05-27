@@ -3,11 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Home (Political) Department</title>
-  <link rel="stylesheet" href="css/notification.css" />
+  <title>Notifications - Home (Political) Department</title>
+  <link rel="stylesheet" href="css/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-  </head>
+  <style>
+    /* Notification Page Specific Styles */
+    .notification-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .notification-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .notification-header h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .notification-header p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .notification-filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 8px 20px;
+      background: white;
+      border: 1px solid var(--secondary-color);
+      color: var(--secondary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--secondary-color);
+      color: white;
+    }
+    
+    .notifications-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .notification-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 25px;
+      transition: transform 0.3s ease;
+    }
+    
+    .notification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .notification-date {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .notification-date::before {
+      content: "📅";
+    }
+    
+    .notification-title {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .notification-desc {
+      color: var(--text-color);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    .notification-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .notification-link {
+      padding: 8px 15px;
+      background: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    
+    .notification-link:hover {
+      background: var(--primary-color);
+    }
+    
+    .notification-link.pdf::before {
+      content: "📄 ";
+    }
+    
+    .notification-link.view::before {
+      content: "👁️ ";
+    }
+    
+    @media (max-width: 768px) {
+      .notifications-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .notification-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
 <body>
+  
   <!-- Accessibility Toolbar -->
   <div class="utility-bar">
     <div class="container">
@@ -56,91 +188,100 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="reports.html">Reports</a></li>
         <li><a href="faqs.html">FAQs</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="notification.html">Notifications</a></li>
+        <li><a href="notification.html" class="active">Notifications</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Wrapper -->
-  <div class="main-wrapper">
-    <!-- Main Content with Sidebar -->
-    <main id="main-content">
-      <section class="hero">
-        <h2>Ensuring Safety and Governance in Meghalaya</h2>
-      </section>
-      
-      <div class="main-content-with-sidebar">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-          <div class="sidebar-section">
-            <h3>Main Content</h3>
-            <ul>
-              <li><a href="meghalayadayaward.html">Meghalaya Day Award</a></li>
-              <li><a href="scheme.html">Schemes</a></li>
-              <li><a href="reports.html">Acts</a></li>
-              <li><a href="faqs.html">Rules</a></li>
-            </ul>
-          </div>
-        </aside>
-        
-        <!-- Main Content -->
-        <div class="main-content">
-          <section class="content-section" id="about">
-            <h2>About the Department</h2>
-            <p>The Home (Political) Department is headed by the Chief Secretary, Government of Meghalaya assisted by the Additional Chief Secretary, Principal Secretary, Commissioner & Secretary, Joint Secretary, Deputy Secretary and Under Secretary. The Chief Minister holds the direct charge of Political Department.</p>
-            <p>The Department deals mainly with the issues relating to Law & Order in the State. The Department does not have any subordinate offices under its control.</p>
-          </section>
-          
-          <!-- New Updates Section -->
-          <section class="content-section updates-section" id="updates">
-            <h2>Latest Updates & Releases</h2>
-            <p>Stay informed with our most recent publications and announcements.</p>
-            
-            <div class="updates-grid">
-              <!-- Update Card 1 -->
-              <div class="update-card">
-                <h3 class="update-title">Meghalaya Day Award Guidelines 2023</h3>
-                <div class="update-date">Released on: 15 November 2023</div>
-                <p>Revised guidelines for the Meghalaya Day Award nominations and selection process.</p>
-                <div class="update-actions">
-                  <a href="pdfs/meghalaya-award-2023.pdf" class="update-btn" download>Download PDF</a>
-                  <a href="pdfs/meghalaya-award-2023.pdf" class="update-btn" target="_blank">View Online</a>
-                </div>
-              </div>
-              
-              <!-- Update Card 2 -->
-              <div class="update-card">
-                <h3 class="update-title">Annual Security Report 2023</h3>
-                <div class="update-date">Released on: 5 November 2023</div>
-                <p>Comprehensive report on the state's security situation and initiatives.</p>
-                <div class="update-actions">
-                  <a href="pdfs/security-report-2023.pdf" class="update-btn" download>Download PDF</a>
-                  <a href="pdfs/security-report-2023.pdf" class="update-btn" target="_blank">View Online</a>
-                </div>
-              </div>
-              
-              <!-- Update Card 3 -->
-              <div class="update-card">
-                <h3 class="update-title">Public Safety Advisory</h3>
-                <div class="update-date">Released on: 25 October 2023</div>
-                <p>Important safety guidelines for citizens during the festival season.</p>
-                <div class="update-actions">
-                  <a href="pdfs/safety-advisory-oct2023.pdf" class="update-btn" download>Download PDF</a>
-                  <a href="pdfs/safety-advisory-oct2023.pdf" class="update-btn" target="_blank">View Online</a>
-                </div>
-              </div>
-            </div>
-          </section>
+  <!-- Main Content -->
+  <main class="notification-page">
+    <div class="notification-header">
+      <h1>Official Notifications</h1>
+      <p>Stay updated with the latest announcements, circulars, and official releases from the Home (Political) Department, Government of Meghalaya.</p>
+    </div>
+    
+    <div class="notification-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Circulars</button>
+      <button class="filter-btn">Orders</button>
+      <button class="filter-btn">Tenders</button>
+      <button class="filter-btn">Press Releases</button>
+    </div>
+    
+    <div class="notifications-container">
+      <!-- Notification 1 -->
+      <div class="notification-card">
+        <div class="notification-date">15 January 2024</div>
+        <h3 class="notification-title">Revised Guidelines for Security Protocols</h3>
+        <p class="notification-desc">Implementation of new security measures across government offices in Meghalaya effective from 1st February 2024.</p>
+        <div class="notification-actions">
+          <a href="notifications/security-guidelines-jan2024.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/security-guidelines-jan2024.pdf" class="notification-link view" target="_blank">View Details</a>
         </div>
       </div>
-    </main>
-  </div>
+      
+      <!-- Notification 2 -->
+      <div class="notification-card">
+        <div class="notification-date">5 January 2024</div>
+        <h3 class="notification-title">Recruitment Notice for Security Personnel</h3>
+        <p class="notification-desc">Applications invited for 50 positions of Security Personnel in various departments. Last date: 30th January 2024.</p>
+        <div class="notification-actions">
+          <a href="notifications/recruitment-notice-jan2024.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/recruitment-notice-jan2024.pdf" class="notification-link view" target="_blank">View Details</a>
+        </div>
+      </div>
+      
+      <!-- Notification 3 -->
+      <div class="notification-card">
+        <div class="notification-date">28 December 2023</div>
+        <h3 class="notification-title">Holiday List for 2024</h3>
+        <p class="notification-desc">Official list of holidays to be observed by all government offices in Meghalaya during the year 2024.</p>
+        <div class="notification-actions">
+          <a href="notifications/holiday-list-2024.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/holiday-list-2024.pdf" class="notification-link view" target="_blank">View Details</a>
+        </div>
+      </div>
+      
+      <!-- Notification 4 -->
+      <div class="notification-card">
+        <div class="notification-date">20 December 2023</div>
+        <h3 class="notification-title">Public Advisory for Year-End Celebrations</h3>
+        <p class="notification-desc">Safety guidelines and regulations for public gatherings during New Year celebrations across the state.</p>
+        <div class="notification-actions">
+          <a href="notifications/public-advisory-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/public-advisory-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        </div>
+      </div>
+      
+      <!-- Notification 5 -->
+      <div class="notification-card">
+        <div class="notification-date">10 December 2023</div>
+        <h3 class="notification-title">Amendment to Security Clearance Procedures</h3>
+        <p class="notification-desc">Revised procedures for obtaining security clearances for government employees and contractors.</p>
+        <div class="notification-actions">
+          <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        </div>
+      </div>
+      
+      <!-- Notification 6 -->
+      <div class="notification-card">
+        <div class="notification-date">1 December 2023</div>
+        <h3 class="notification-title">Invitation for Security Equipment Tenders</h3>
+        <p class="notification-desc">Open tender notice for procurement of security equipment for government buildings. Submission deadline: 15th January 2024.</p>
+        <div class="notification-actions">
+          <a href="notifications/security-tender-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+          <a href="notifications/security-tender-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -181,6 +322,27 @@
     </div>
   </footer>
 
-  <script src="js/index.js"></script>
+  <script>
+    // Simple filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Here you would typically filter the notifications
+          // For now we'll just log the filter type
+          console.log('Filter by:', this.textContent);
+        });
+      });
+    });
+  </script>
+
+<script src="js/index.js"></script>
+  
 </body>
 </html>
