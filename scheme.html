@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compensation Scheme - Home (Political) Department</title>
-  <link rel="stylesheet" href="css/scheme.css"> <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="css/scheme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Accessibility Toolbar -->
@@ -58,11 +59,11 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="notification.html">Notifications</a></li>
+        <li><a href="acts.html">Reports</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="reports.html">Reports</a></li>
         <li><a href="faqs.html">FAQs</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="notification.html">Notifications</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </nav>
@@ -86,7 +87,7 @@
             <li><a href="scheme.html" class="sidebar-link">
               <span>Schemes</span>
             </a></li>
-            <li><a href="reports.html" class="sidebar-link">
+            <li><a href="acts.html" class="sidebar-link">
               <span>Acts</span>
             </a></li>
             <li><a href="faqs.html" class="sidebar-link">
@@ -102,24 +103,48 @@
             <p>This page provides information about the compensation scheme. You can download or view the detailed document below.</p>
           </section>
           <section class="content-section">
-            <h2>Compensation Scheme PDF</h2>
-            <div class="pdf-buttons">
-              <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="pdf-button" download>
-                Download PDF
-              </a>
-              <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="pdf-button">
-                View Online
-              </a>
+            <h2>Compensation Scheme Documents</h2>
+            
+            <!-- Document 1 -->
+            <div class="document-card">
+              <h3>Scheme for Payment of Compensation</h3>
+              <div class="document-actions">
+                <button class="load-pdf-btn" data-pdf="schemes_pdf/Scheme for payment of compensation.pdf">
+                  <i class="fas fa-eye"></i> View Document
+                </button>
+                <a href="schemes_pdf/Scheme for payment of compensation.pdf" class="download-btn" download>
+                  <i class="fas fa-download"></i> Download PDF
+                </a>
+              </div>
+              <div class="pdf-viewer-container" id="viewer1" style="display:none;">
+                <div class="pdf-viewer-toolbar">
+                  <button class="close-viewer-btn" data-target="viewer1">
+                    <i class="fas fa-times"></i> Close
+                  </button>
+                </div>
+                <iframe class="pdf-viewer" data-src="schemes_pdf/Scheme for payment of compensation.pdf"></iframe>
+              </div>
             </div>
-            <div class="pdf-viewer">
-              <iframe 
-                src="schemes_pdf/Scheme for payment of compensation.pdf"
-                width="100%" 
-                height="600px"
-                style="border:0;"
-                title="Compensation Scheme PDF"
-                aria-label="Compensation Scheme PDF"
-              ></iframe>
+            
+            <!-- Document 2 -->
+            <div class="document-card">
+              <h3>MVCS Scheme</h3>
+              <div class="document-actions">
+                <button class="load-pdf-btn" data-pdf="schemes_pdf/MVCS.pdf">
+                  <i class="fas fa-eye"></i> View Document
+                </button>
+                <a href="schemes_pdf/MVCS.pdf" class="download-btn" download>
+                  <i class="fas fa-download"></i> Download PDF
+                </a>
+              </div>
+              <div class="pdf-viewer-container" id="viewer2" style="display:none;">
+                <div class="pdf-viewer-toolbar">
+                  <button class="close-viewer-btn" data-target="viewer2">
+                    <i class="fas fa-times"></i> Close
+                  </button>
+                </div>
+                <iframe class="pdf-viewer" data-src="schemes_pdf/MVCS.pdf"></iframe>
+              </div>
             </div>
           </section>
         </div>
@@ -166,6 +191,38 @@
     </div>
   </footer>
 
-  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle PDF viewer buttons
+      const loadButtons = document.querySelectorAll('.load-pdf-btn');
+      const closeButtons = document.querySelectorAll('.close-viewer-btn');
+      
+      loadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const pdfPath = this.getAttribute('data-pdf');
+          const viewerId = this.closest('.document-card').querySelector('.pdf-viewer-container').id;
+          const viewer = document.getElementById(viewerId);
+          
+          // Set the iframe source
+          const iframe = viewer.querySelector('iframe');
+          iframe.src = iframe.getAttribute('data-src');
+          
+          // Show the viewer
+          viewer.style.display = 'block';
+          
+          // Scroll to the viewer
+          viewer.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+      
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const viewer = document.getElementById(targetId);
+          viewer.style.display = 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>

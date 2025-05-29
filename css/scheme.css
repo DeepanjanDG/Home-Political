@@ -31,6 +31,7 @@ body.contrast-yellow-black, body.contrast-yellow-black * {
   color: #ff0 !important;
   border-color: #ff0 !important;
 }
+
 body.contrast-yellow-black a,
 body.contrast-yellow-black h1,
 body.contrast-yellow-black h2,
@@ -47,6 +48,7 @@ body.contrast-black-white, body.contrast-black-white * {
   color: #000 !important;
   border-color: #000 !important;
 }
+
 body.contrast-black-white a,
 body.contrast-black-white h1,
 body.contrast-black-white h2,
@@ -398,83 +400,112 @@ nav a:hover::after {
   border-radius: 5px;
 }
 
-/* Additional styles for the PDF buttons */
-    .pdf-buttons {
-      display: flex;
-      gap: 15px;
-      margin: 1.5rem 0;
-    }
-    
-    .pdf-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #005aa7;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: background-color 0.3s;
-    }
-    
-    .pdf-button:hover {
-      background-color: #004080;
-    }
-    
-    .pdf-viewer {
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      margin-top: 20px;
-    }
-
-    
-/* Active Link Style */
-nav a.active {
-  color: var(--accent-color);
+/* Document Cards */
+.document-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
-nav a.active::after {
+.document-card h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.document-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.load-pdf-btn, .download-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.load-pdf-btn i, .download-btn i {
+  margin-right: 8px;
+}
+
+.load-pdf-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.load-pdf-btn:hover {
+  background-color: #2980b9;
+}
+
+.download-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.download-btn:hover {
+  background-color: #c0392b;
+}
+
+/* PDF Viewer */
+.pdf-viewer-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.pdf-viewer-toolbar {
+  background: #f5f5f5;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-viewer-btn {
+  background: transparent;
+  border: none;
+  color: #7f8c8d;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.close-viewer-btn:hover {
+  color: #e74c3c;
+}
+
+.pdf-viewer {
   width: 100%;
+  height: 600px;
+  border: none;
 }
 
-/* Tap/Click Effect */
-nav a:active {
-  transform: scale(0.98);
-}
-
-/* Scrolled State */
-nav.scrolled {
-  padding: 0.3rem 0;
-  background-color: rgba(0, 90, 167, 0.95);
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  nav ul {
+  .document-actions {
     flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
+    gap: 10px;
   }
   
-  nav li {
-    margin: 0.3rem 0;
+  .load-pdf-btn, .download-btn {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
   
-  nav a {
-    padding: 0.5rem 1rem;
-    display: block;
-    width: 100%;
-  }
-  
-  nav a::after {
-    display: none;
-  }
-  
-  nav.scrolled {
-    padding: 0.2rem 0;
+  .pdf-viewer {
+    height: 400px;
   }
 }
 

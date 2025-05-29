@@ -6,6 +6,7 @@
   <title>Meghalaya Day Award - Home (Political) Department</title>
   <link rel="stylesheet" href="css/meghalayadayaward.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Accessibility Toolbar -->
@@ -59,11 +60,11 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
+        <li><a href="notification.html">Notifications</a></li>
+        <li><a href="acts.html">Reports</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="reports.html">Reports</a></li>
         <li><a href="faqs.html">FAQs</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="notification.html">Notifications</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </nav>
@@ -87,7 +88,7 @@
             <li><a href="scheme.html" class="sidebar-link">
               <span>Schemes</span>
             </a></li>
-            <li><a href="reports.html" class="sidebar-link">
+            <li><a href="acts.html" class="sidebar-link">
               <span>Acts</span>
             </a></li>
             <li><a href="faqs.html" class="sidebar-link">
@@ -98,30 +99,30 @@
         </aside>
         <!-- Main Content -->
         <div class="main-content">
-          <section class="content-section" id="award-section">
-            <h2>About the Meghalaya Day Award</h2>
+          <section class="content-section">
+          <h2>About the Meghalaya Day Award</h2>
             <p>The Meghalaya Day Award recognizes outstanding contributions to the state. Below you can access the official documents related to the award scheme.</p>
-            
-            <h2>Meghalaya Day Award Notification</h2>
             <div class="pdf-buttons">
-  <a href="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf" class="pdf-button" download>
-    Download PDF
-  </a>
-  <a href="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf" class="pdf-button" target="_blank">
-    View Online
-  </a>
-</div>
-            <div class="pdf-viewer">
-              <iframe 
-                src="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf"
+            <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn" download>
+              Download PDF
+            </a>
+            <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn">
+              Show Online
+            </a>
+             <!-- <button id="show-pdf-btn" class="utility-btn" type="button">Show on Page</button> -->
+            </div>
+            <div id="pdf-viewer-container" style="display:none; margin-top:1.5rem;">
+            <iframe 
+                src="schemes_pdf/Scheme for payment of compensation.pdf"
                 width="100%" 
                 height="600px"
-                style="border:0;"
-                title="Meghalaya Day Award PDF"
-                aria-label="Meghalaya Day Award PDF"
-              ></iframe>
+                style="border:0; margin-top:1.5rem;"
+                title="Compensation Scheme PDF"
+                aria-label="Compensation Scheme PDF"
+            ></iframe>
+              </div>
+            </section>
             </div>
-          </section>
         </div>
       </div>
     </main>
@@ -166,5 +167,15 @@
     </div>
   </footer>
   <script src="js/index.js"></script>
+  <script>
+          document.addEventListener('DOMContentLoaded', function() {
+          const btn = document.getElementById('show-pdf-btn');
+          const viewer = document.getElementById('pdf-viewer-container');
+          btn.addEventListener('click', function() {
+          viewer.style.display = 'block';
+          btn.style.display = 'none';
+            });
+          });
+        </script>
 </body>
 </html>
