@@ -69,74 +69,193 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <div class="main-wrapper">
-    <main id="main-content">
-    <section class="hero">
-      <h2>Contact Us</h2>
-    </section>
-    <div class="main-content-with-sidebar">
-      <!-- Sidebar -->
-      <aside class="sidebar">
+  <!-- Language Toggle at the top -->
+<div class="language-toggle">
+  <button class="lang-btn active" id="english-btn">English</button>
+  <button class="lang-btn" id="hindi-btn">हिंदी</button>
+</div>
+
+<!-- Main Content -->
+<div class="main-wrapper">
+  <main id="main-content">
+    <!-- English Content (default visible) -->
+    <div class="content-english">
+      <section class="hero">
+        <h1>Contact Us</h1>
+      </section>
+      <div class="main-content-with-sidebar">
+        <aside class="sidebar">
           <div class="sidebar-section">
-          <h3>Main Content</h3>
-          <ul>
-            <li><a href="meghalayadayaward.html" class="sidebar-link">
-              <span>Meghalaya Day Award</span>
-            </a></li>
-            <li><a href="scheme.html" class="sidebar-link">
-              <span>Schemes</span>
-            </a></li>
-            <li><a href="acts.html" class="sidebar-link">
-              <span>Acts</span>
-            </a></li>
-            <li><a href="faqs.html" class="sidebar-link">
-              <span>Rules</span>
-            </a></li>
-          </ul>
-        </div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="meghalayadayaward.html" class="sidebar-link">
+                <span class="link-icon">🏆</span>
+                <span>Meghalaya Day Award</span>
+              </a></li>
+              <li><a href="scheme.html" class="sidebar-link">
+                <span class="link-icon">📋</span>
+                <span>Schemes</span>
+              </a></li>
+              <li><a href="reports.html" class="sidebar-link">
+                <span class="link-icon">📚</span>
+                <span>Acts</span>
+              </a></li>
+              <li><a href="faqs.html" class="sidebar-link">
+                <span class="link-icon">⚖️</span>
+                <span>Rules</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section contact-hours">
+            <h3>Office Hours</h3>
+            <p>Monday - Friday</p>
+            <p>9:00 AM - 5:00 PM</p>
+            <p>Closed on weekends and public holidays</p>
+          </div>
         </aside>
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="content-section contact-card" id="contact-info">
-          <div class="contact-header">
-            <h2>Home (Political) Department</h2>
-            <div class="contact-badge">Government of Meghalaya</div>
-          </div>
-          <div class="contact-details">
-            <div class="contact-item">  
-              <div>
-                <h4>Address</h4>
-                <p>Main Secretariat Building, Room No.320<br>
-                Shillong – 793001</p>
+        
+        <div class="main-content">
+          <section class="content-section contact-card" id="contact-info">
+            <div class="contact-header">
+              <h2>Home (Political) Department</h2>
+              <div class="contact-badge">Government of Meghalaya</div>
+            </div>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon">🏛️</span>
+                <div>
+                  <h4>Address</h4>
+                  <p>Main Secretariat Building, Room No.320<br>
+                  Shillong – 793001</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>0364 – 2223359</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:political.dept-meg@gov.in" class="email-link">political.dept-meg@gov.in</a></p>
+                </div>
               </div>
             </div>
             
-            <div class="contact-item">
-              <div>
-                <h4>Phone</h4>
-                <p>0364 – 2223359</p>
+            <div class="contact-person">
+              <h3>Web Information Manager</h3>
+              <p>Smti. D.D. Syngai, MCS,<br>
+              Deputy Secretary to the Govt. of Meghalaya</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hindi Content (hidden by default) -->
+    <div class="content-hindi" style="display:none">
+      <section class="hero">
+        <h1>संपर्क करें</h1>
+      </section>
+      <div class="main-content-with-sidebar">
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3>त्वरित लिंक</h3>
+            <ul>
+              <li><a href="meghalayadayaward.html" class="sidebar-link">
+                <span class="link-icon">🏆</span>
+                <span>मेघालय दिवस पुरस्कार</span>
+              </a></li>
+              <li><a href="scheme.html" class="sidebar-link">
+                <span class="link-icon">📋</span>
+                <span>योजनाएँ</span>
+              </a></li>
+              <li><a href="reports.html" class="sidebar-link">
+                <span class="link-icon">📚</span>
+                <span>अधिनियम</span>
+              </a></li>
+              <li><a href="faqs.html" class="sidebar-link">
+                <span class="link-icon">⚖️</span>
+                <span>नियम</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sidebar-section contact-hours">
+            <h3>कार्यालय समय</h3>
+            <p>सोमवार - शुक्रवार</p>
+            <p>सुबह 9:00 से शाम 5:00 तक</p>
+            <p>सप्ताहांत और सार्वजनिक अवकाश पर बंद</p>
+          </div>
+        </aside>
+        
+        <div class="main-content">
+          <section class="content-section contact-card" id="contact-info">
+            <div class="contact-header">
+              <h2>गृह (राजनीतिक) विभाग</h2>
+              <div class="contact-badge">मेघालय सरकार</div>
+            </div>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon">🏛️</span>
+                <div>
+                  <h4>पता</h4>
+                  <p>मुख्य सचिवालय भवन, कक्ष संख्या 320<br>
+                  शिलांग – 793001</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                  <h4>फोन</h4>
+                  <p>0364 – 2223359</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <h4>ईमेल</h4>
+                  <p><a href="mailto:political.dept-meg@gov.in" class="email-link">political.dept-meg@gov.in</a></p>
+                </div>
               </div>
             </div>
             
-            <div class="contact-item">
-              <div>
-                <h4>Email</h4>
-                <p><a href="mailto:political.dept-meg@gov.in" class="email-link">political.dept-meg@gov.in</a></p>
-              </div>
+            <div class="contact-person">
+              <h3>वेब सूचना प्रबंधक</h3>
+              <p>सुश्री डी.डी. सिंगाई, एमसीएस,<br>
+              मेघालय सरकार के उप सचिव</p>
             </div>
-          </div>
-          
-          <div class="contact-person">
-            <h3>Web Information Manager</h3>
-            <p>Smti. D.D. Syngai, MCS,<br>
-            Deputy Secretary to the Govt. of Meghalaya</p>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   </main>
-  </div>
+</div>
+
+<!-- Language Toggle JavaScript -->
+<script>
+  document.getElementById('english-btn').addEventListener('click', function() {
+    document.querySelector('.content-english').style.display = 'block';
+    document.querySelector('.content-hindi').style.display = 'none';
+    document.getElementById('english-btn').classList.add('active');
+    document.getElementById('hindi-btn').classList.remove('active');
+  });
+
+  document.getElementById('hindi-btn').addEventListener('click', function() {
+    document.querySelector('.content-english').style.display = 'none';
+    document.querySelector('.content-hindi').style.display = 'block';
+    document.getElementById('hindi-btn').classList.add('active');
+    document.getElementById('english-btn').classList.remove('active');
+  });
+</script>
 
   <!-- Footer -->
   <footer>

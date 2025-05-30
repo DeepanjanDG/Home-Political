@@ -138,6 +138,43 @@ body.contrast-black-white h6 {
   left: 10px;
 }
 
+/* Language Toggle Styles */
+.utility-group.lang-group {
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.lang-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+    background: #3182ce;
+    color: white;
+    border-color: #3182ce;
+}
+
+.lang-btn:not(.active) {
+    display: none;
+}
+
+.lang-btn#english-btn.active ~ #hindi-btn,
+.lang-btn#hindi-btn.active ~ #english-btn {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
+}
+
 /* Contrast Button Visuals */
 .contrast-default-btn {
   background: linear-gradient(90deg, #fff 50%, #e0e0e0 50%);
