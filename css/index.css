@@ -70,21 +70,25 @@ body.contrast-black-white h6 {
   font-size: 14px;
   border-bottom: 2px solid var(--secondary-color);
 }
+
 .utility-bar .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
+
 .utility-group {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
 .utility-label {
   color: var(--white);
   font-weight: 400;
 }
+
 .utility-btn, .search-btn {
   background: rgba(255, 255, 255, 0.1);
   color: var(--white);
@@ -155,6 +159,10 @@ body.contrast-black-white h6 {
   outline-offset: 2px;
 }
 
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
+}
 
 /* Header Styles */
 .topbar {

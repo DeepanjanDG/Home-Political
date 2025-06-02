@@ -74,7 +74,7 @@ body.contrast-black-white h6 {
 .utility-bar .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -144,30 +144,33 @@ body.contrast-black-white h6 {
     margin-right: 15px;
 }
 
+/* Language Toggle Styles */
 .lang-btn {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    background: #f8f8f8;
-    cursor: pointer;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+  padding: 6px 12px;
+  border: 1px solid #005aa7;
+  background: #005aa7;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin: 0 3px;
 }
 
 .lang-btn.active {
-    background: #3182ce;
-    color: white;
-    border-color: #3182ce;
+  background: #3182ce;
+  color: white;
+  border-color: #3182ce;
 }
 
+/* Hide the inactive language button */
 .lang-btn:not(.active) {
-    display: none;
+  display: none;
 }
 
-.lang-btn#english-btn.active ~ #hindi-btn,
-.lang-btn#hindi-btn.active ~ #english-btn {
-    display: inline-block;
-    margin-left: 5px;
+/* Show the other language button when one is active */
+.lang-btn#english-btn.active ~ #hindi-btn:not(.active),
+.lang-btn#hindi-btn.active ~ #english-btn:not(.active) {
+  display: inline-block;
 }
 
 /* Hindi Content Styles */

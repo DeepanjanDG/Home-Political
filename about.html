@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Home (Political) Department</title>
+    <title>About Us - Home (Political) Department</title>
     <link rel="stylesheet" href="css/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Additional CSS for language toggle */
-        .utility-group.lang-group {
-            margin-left: auto;
-            margin-right: 15px;
-        }
+    <!-- <style>
+        /* Language Toggle Styles */
         .lang-btn {
             padding: 6px 12px;
             border: 1px solid #ddd;
@@ -20,21 +16,19 @@
             font-size: 0.9rem;
             border-radius: 4px;
             transition: all 0.2s ease;
+            margin: 0 3px;
         }
-        .lang-btn.active {
-            background: #3182ce;
-            color: white;
-            border-color: #3182ce;
-        }
-        .lang-btn:not(.active) {
+
+        /* Hide both buttons initially - JavaScript will show the correct one */
+        #english-btn, #hindi-btn {
             display: none;
         }
-        .lang-btn#english-btn.active ~ #hindi-btn,
-        .lang-btn#hindi-btn.active ~ #english-btn {
-            display: inline-block;
-            margin-left: 5px;
+
+        /* Hindi Content Styles */
+        .hindi-content, .content-hindi {
+            font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <!-- Accessibility Toolbar -->
@@ -64,8 +58,8 @@
         <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
       </div>
       <div class="utility-group">
-        <button class="utility-btn lang-btn active" id="english-btn">English</button>
-        <button class="utility-btn lang-btn" id="hindi-btn">हिंदी</button>
+        <button id="hindi-btn" class="utility-btn">हिन्दी</button>
+        <button id="english-btn" class="utility-btn" style="display: none;">English</button>
       </div>
       <div class="utility-group search-group">
         <input type="text" id="search-input" placeholder="Search..." class="search-input">
@@ -280,48 +274,53 @@
       </div>
     </footer>
 
-    <script src="js/index.js"></script>
     <script>
-      // Language Toggle Functionality
-      function setLanguage(lang) {
-        if (lang === 'en') {
-          // Show English content
-          document.querySelectorAll('.english-content').forEach(el => el.style.display = '');
-          document.querySelectorAll('.content-english').forEach(el => el.style.display = 'block');
-          
-          // Hide Hindi content
-          document.querySelectorAll('.hindi-content').forEach(el => el.style.display = 'none');
-          document.querySelectorAll('.content-hindi').forEach(el => el.style.display = 'none');
-          
-          // Update active button
-          document.getElementById('english-btn').classList.add('active');
-          document.getElementById('hindi-btn').classList.remove('active');
-          
-          // Update HTML lang attribute
-          document.documentElement.lang = 'en';
-        } else {
-          // Show Hindi content
-          document.querySelectorAll('.hindi-content').forEach(el => el.style.display = '');
-          document.querySelectorAll('.content-hindi').forEach(el => el.style.display = 'block');
-          
-          // Hide English content
-          document.querySelectorAll('.english-content').forEach(el => el.style.display = 'none');
-          document.querySelectorAll('.content-english').forEach(el => el.style.display = 'none');
-          
-          // Update active button
-          document.getElementById('hindi-btn').classList.add('active');
-          document.getElementById('english-btn').classList.remove('active');
-          
-          // Update HTML lang attribute
-          document.documentElement.lang = 'hi';
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set initial language from localStorage or default to English
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+        
+        function updateLanguage(lang) {
+            currentLang = lang;
+            
+            // Update content visibility
+            const englishElements = document.querySelectorAll('.english-content, .content-english');
+            const hindiElements = document.querySelectorAll('.hindi-content, .content-hindi');
+            
+            if (lang === 'en') {
+                englishElements.forEach(el => el.style.display = '');
+                hindiElements.forEach(el => el.style.display = 'none');
+                document.getElementById('hindi-btn').style.display = 'inline-block';
+                document.getElementById('english-btn').style.display = 'none';
+                document.title = "About Us - Home (Political) Department";
+                document.documentElement.lang = 'en';
+            } else {
+                englishElements.forEach(el => el.style.display = 'none');
+                hindiElements.forEach(el => el.style.display = '');
+                document.getElementById('english-btn').style.display = 'inline-block';
+                document.getElementById('hindi-btn').style.display = 'none';
+                document.title = "हमारे बारे में - गृह (राजनीतिक) विभाग";
+                document.documentElement.lang = 'hi';
+            }
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
         }
-      }
 
-      document.getElementById('english-btn').addEventListener('click', () => setLanguage('hi'));
-      document.getElementById('hindi-btn').addEventListener('click', () => setLanguage('en'));
+        // Set up event listeners
+        document.getElementById('english-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            updateLanguage('en');
+        });
+        
+        document.getElementById('hindi-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            updateLanguage('hi');
+        });
 
-      // Initialize with English
-      setLanguage('en');
+        // Initialize
+        updateLanguage(currentLang);
+    });
     </script>
+    <script src="js/index.js"></script>
 </body>
 </html>

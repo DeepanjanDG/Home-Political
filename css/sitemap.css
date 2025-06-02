@@ -97,7 +97,7 @@ body.contrast-black-white h6 {
 .utility-bar .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
 .utility-group {

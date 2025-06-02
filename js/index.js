@@ -17,7 +17,6 @@ if (skipToMainContentBtn) {
   });
 }
 
-
 // Text Size Functionality
 const textSizeButtons = document.querySelectorAll('.text-size-btn');
 let fontSizeLevels = [14, 16, 18, 20, 22]; // px
@@ -81,15 +80,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 // Search Functionality
-// if (searchBtn) {
-//   searchBtn.addEventListener('click', () => {
-//     const query = searchInput.value.trim();
-//     if (query) {
-//       alert(`Search functionality would search for: ${query}`);
-//       // Implement actual search functionality here
-//     }
-//   });
-// }
+if (searchBtn) {
+  searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query) {
+      alert(`Search functionality would search for: ${query}`);
+      // Implement actual search functionality here
+    }
+  });
+}
 
 
 // Screen Reader Access
