@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Home (Political) Department</title>
   <link rel="stylesheet" href="css/contact.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Accessibility Toolbar -->
@@ -45,23 +45,27 @@
     </div>
   </div>
 
-  <!-- Header -->
-  <header>
+  <!-- Header -->   
+    <header>
     <div class="topbar">
     <div class="container">
       <div class="logo-title-container">
         <a href="index.html" class="logo-link">
           <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
         </a>
-        <h1>
+        <h1 class="english-content">
           Home Political Department<br>
           <span>Government of Meghalaya</span>
+        </h1>
+        <h1 class="hindi-content" style="display:none">
+          गृह राजनीतिक विभाग<br>
+          <span>मेघालय सरकार</span>
         </h1>
      </div>
     </div>
     </div>
     <nav>
-      <ul>
+        <ul class="english-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="notification.html">Notifications</a></li>
         <li><a href="acts.html">Reports</a></li>
@@ -70,14 +74,23 @@
         <li><a href="contact.html" class="active">Contact Us</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
+      <ul class="hindi-content" style="display:none">
+        <li><a href="index.html">होम</a></li>
+        <li><a href="notification.html">अधिसूचनाएं</a></li>
+        <li><a href="acts.html">रिपोर्ट</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="faqs.html">सामान्य प्रश्न</a></li>
+        <li><a href="contact.html" class="active">संपर्क करें</a></li>
+        <li><a href="sitemap.html">साइटमैप</a></li>
+      </ul>
     </nav>
-  </header>
+    </header>
 
   <!-- Language Toggle at the top -->
-<div class="language-toggle">
+<!-- <div class="language-toggle">
   <button class="lang-btn active" id="english-btn">English</button>
   <button class="lang-btn" id="hindi-btn">हिंदी</button>
-</div>
+</div> -->
 
 <!-- Main Content -->
 <div class="main-wrapper">
@@ -244,7 +257,7 @@
 </div>
 
 <!-- Language Toggle JavaScript -->
-<script>
+<!-- <script>
   document.getElementById('english-btn').addEventListener('click', function() {
     document.querySelector('.content-english').style.display = 'block';
     document.querySelector('.content-hindi').style.display = 'none';
@@ -258,46 +271,122 @@
     document.getElementById('hindi-btn').classList.add('active');
     document.getElementById('english-btn').classList.remove('active');
   });
-</script>
+</script> -->
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-main">
-      <div class="footer-copy">
-        <p>
-          Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-        </p>
-        <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
-        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+    <footer>
+      <div class="footer-main">
+        <div class="footer-copy english-content">
+          <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.</p>
+          <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
+          <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+        </div>
+        <div class="footer-copy hindi-content" style="display:none">
+          <p>साइट का डिजाइन और रखरखाव राष्ट्रीय सूचना विज्ञान केंद्र, मेघालय राज्य केंद्र द्वारा किया गया है।</p>
+          <p>&copy; 2023 गृह (राजनीतिक) विभाग, मेघालय</p>
+          <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+        </div>
+        <div class="footer-sections english-content">
+          <div class="footer-section">
+            <h4>Important Links</h4>
+            <ul>
+              <li><a href="#">RTI</a></li>
+              <li><a href="#">Tenders</a></li>
+              <li><a href="#">Downloads</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Access</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Other Resources</h4>
+            <ul>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-sections hindi-content" style="display:none">
+          <div class="footer-section">
+            <h4>महत्वपूर्ण लिंक</h4>
+            <ul>
+              <li><a href="#">सूचना का अधिकार</a></li>
+              <li><a href="#">टेंडर</a></li>
+              <li><a href="#">डाउनलोड</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>त्वरित पहुंच</h4>
+            <ul>
+              <li><a href="index.html">होम</a></li>
+              <li><a href="about.html">हमारे बारे में</a></li>
+              <li><a href="contact.html">संपर्क</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>अन्य संसाधन</h4>
+            <ul>
+              <li><a href="#">साइटमैप</a></li>
+              <li><a href="#">सहायता</a></li>
+              <li><a href="#">प्रतिक्रिया</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="footer-sections">
-        <div class="footer-section">
-          <h4>Important Links</h4>
-          <ul>
-            <li><a href="#">RTI</a></li>
-            <li><a href="#">Tenders</a></li>
-            <li><a href="#">Downloads</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-        <h4>Quick Access</h4>
-          <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Other Resources</h4>
-          <ul>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Feedback</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set initial language from localStorage or default to English
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+        
+        function updateLanguage(lang) {
+            currentLang = lang;
+            
+            // Update content visibility
+            const englishElements = document.querySelectorAll('.english-content, .content-english');
+            const hindiElements = document.querySelectorAll('.hindi-content, .content-hindi');
+            
+            if (lang === 'en') {
+                englishElements.forEach(el => el.style.display = '');
+                hindiElements.forEach(el => el.style.display = 'none');
+                document.getElementById('hindi-btn').style.display = 'inline-block';
+                document.getElementById('english-btn').style.display = 'none';
+                document.title = "Home - Home (Political) Department";
+                document.documentElement.lang = 'en';
+            } else {
+                englishElements.forEach(el => el.style.display = 'none');
+                hindiElements.forEach(el => el.style.display = '');
+                document.getElementById('english-btn').style.display = 'inline-block';
+                document.getElementById('hindi-btn').style.display = 'none';
+                document.title = "मुख्य पृष्ठ - गृह (राजनीतिक) विभाग";
+                document.documentElement.lang = 'hi';
+            }
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Set up event listeners
+        document.getElementById('english-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            updateLanguage('en');
+        });
+        
+        document.getElementById('hindi-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            updateLanguage('hi');
+        });
+
+        // Initialize
+        updateLanguage(currentLang);
+    });
+    </script>
   <script src="js/index.js"></script>
 </body>
 </html>

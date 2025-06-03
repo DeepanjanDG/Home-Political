@@ -151,6 +151,11 @@ body.contrast-black-white h6 {
   left: 10px;
 }
 
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
+}
+
 /* Contrast Button Visuals */
 .contrast-default-btn {
   background: linear-gradient(90deg, #fff 50%, #e0e0e0 50%);

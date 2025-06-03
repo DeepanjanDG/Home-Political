@@ -138,19 +138,41 @@ if (savedSpacing === 'wide') {
   document.body.classList.add('wide-spacing');
 }
 
+
 // JavaScript for expandable key subjects
   document.addEventListener('DOMContentLoaded', function() {
-    const expandBtn = document.querySelector('.expand-subjects-btn');
-    const container = document.querySelector('.key-subjects-container');
-    
+  // Function to handle expand/collapse
+  function setupExpandButton(expandBtn, container) {
     expandBtn.addEventListener('click', function() {
       container.classList.toggle('key-subjects-expanded');
       
-      // Update button text
+      // Update button text based on current language
       if (container.classList.contains('key-subjects-expanded')) {
-        expandBtn.innerHTML = 'Show Less Subjects <span class="icon">▲</span>';
+        if (document.documentElement.lang === 'hi') {
+          expandBtn.innerHTML = 'कम विषय दिखाएं <span class="icon">▲</span>';
+        } else {
+          expandBtn.innerHTML = 'Show Less Subjects <span class="icon">▲</span>';
+        }
       } else {
-        expandBtn.innerHTML = 'Show More Subjects <span class="icon">▼</span>';
+        if (document.documentElement.lang === 'hi') {
+          expandBtn.innerHTML = 'और विषय दिखाएं <span class="icon">▼</span>';
+        } else {
+          expandBtn.innerHTML = 'Show More Subjects <span class="icon">▼</span>';
+        }
       }
     });
-  });
+  }
+
+  // Set up buttons for both languages
+  const englishExpandBtn = document.querySelector('.english-content .expand-subjects-btn');
+  const englishContainer = document.querySelector('.english-content .key-subjects-container');
+  if (englishExpandBtn && englishContainer) {
+    setupExpandButton(englishExpandBtn, englishContainer);
+  }
+
+  const hindiExpandBtn = document.querySelector('.hindi-content .expand-subjects-btn');
+  const hindiContainer = document.querySelector('.hindi-content .key-subjects-container');
+  if (hindiExpandBtn && hindiContainer) {
+    setupExpandButton(hindiExpandBtn, hindiContainer);
+  }
+});
