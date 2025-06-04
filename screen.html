@@ -5,42 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Screen Reader Access - Home (Political) Department</title>
   <link rel="stylesheet" href="css/screen.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <!-- Accessibility Toolbar -->
   <div class="utility-bar">
     <div class="container">
       <div class="utility-group">
-        <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
+        <button id="skip-to-main-content-btn" class="utility-btn english-content">Skip to main content</button>
+        <button id="skip-to-main-content-btn-hi" class="utility-btn hindi-content" style="display:none">मुख्य सामग्री पर जाएं</button>
       </div>
       <div class="utility-group">
-        <button id="screen-reader-access-btn" class="utility-btn">Screen Reader Access</button>
+        <button id="screen-reader-access-btn" class="utility-btn english-content">Screen Reader Access</button>
+        <button id="screen-reader-access-btn-hi" class="utility-btn hindi-content" style="display:none">स्क्रीन रीडर एक्सेस</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Text Size:</span>
+        <span class="utility-label english-content">Text Size:</span>
+        <span class="utility-label hindi-content" style="display:none">टेक्स्ट आकार:</span>
         <button class="utility-btn text-size-btn" data-size="small" title="Decrease text size">&#8722;A</button>
         <button class="utility-btn text-size-btn" data-size="default" title="Default text size">A</button>
         <button class="utility-btn text-size-btn" data-size="large" title="Increase text size">A&#43;</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Contrast:</span>
+        <span class="utility-label english-content">Contrast:</span>
+        <span class="utility-label hindi-content" style="display:none">कंट्रास्ट:</span>
         <button class="utility-btn contrast-btn contrast-default-btn" data-theme="default" title="Default Contrast">A</button>
         <button class="utility-btn contrast-btn contrast-yellow-black-btn" data-theme="yellow-black" title="Yellow on Black">A</button>
         <button class="utility-btn contrast-btn contrast-black-white-btn" data-theme="black-white" title="Black on White">A</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Spacing:</span>
-        <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
-        <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
+        <span class="utility-label english-content">Spacing:</span>
+        <span class="utility-label hindi-content" style="display:none">स्पेसिंग:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide" title="Increase spacing">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal" title="Normal spacing">Off</button>
       </div>
       <div class="utility-group">
         <button id="hindi-btn" class="utility-btn">हिन्दी</button>
         <button id="english-btn" class="utility-btn" style="display: none;">English</button>
       </div>
       <div class="utility-group search-group">
-        <input type="text" id="search-input" placeholder="Search..." class="search-input">
-        <button id="search-btn" class="search-btn">Go</button>
+        <input type="text" id="search-input" placeholder="Search..." class="search-input english-content">
+        <input type="text" id="search-input-hi" placeholder="खोजें..." class="search-input hindi-content" style="display:none">
+        <button id="search-btn" class="search-btn english-content">Go</button>
+        <button id="search-btn-hi" class="search-btn hindi-content" style="display:none">खोजें</button>
       </div>
     </div>
   </div>
@@ -48,20 +55,24 @@
   <!-- Header -->
   <header>
     <div class="topbar">
-    <div class="container">
-    <div class="logo-title-container">
-      <a href="index.html" class="logo-link">
-        <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
-      </a>
-      <h1>
-        Home Political Department<br>
-        <span>Government of Meghalaya</span>
-      </h1>
+      <div class="container">
+        <div class="logo-title-container">
+          <a href="index.html" class="logo-link">
+            <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
+          </a>
+          <h1 class="english-content">
+            Home Political Department<br>
+            <span>Government of Meghalaya</span>
+          </h1>
+          <h1 class="hindi-content" style="display:none">
+            गृह राजनीतिक विभाग<br>
+            <span>मेघालय सरकार</span>
+          </h1>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
     <nav>
-      <ul>
+      <ul class="english-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="notification.html">Notifications</a></li>
         <li><a href="acts.html">Reports</a></li>
@@ -70,110 +81,224 @@
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
+      <ul class="hindi-content" style="display:none">
+        <li><a href="index.html">होम</a></li>
+        <li><a href="notification.html">अधिसूचनाएं</a></li>
+        <li><a href="acts.html">रिपोर्ट</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="faqs.html">सामान्य प्रश्न</a></li>
+        <li><a href="contact.html">संपर्क करें</a></li>
+        <li><a href="sitemap.html">साइटमैप</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- ...existing code... -->
   <!-- Main Content -->
   <div class="main-wrapper container">
     <main id="main-content">
-      <section class="hero">
-        <h2>Screen Reader Access</h2>
-      </section>
-      <div class="main-content-with-sidebar">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-          <div class="sidebar-section">
-            <h3>Main Content</h3>
-            <ul>
-              <li><a href="meghalayadayaward.html" class="sidebar-link">
-                <span>Meghalaya Day Award</span>
-              </a></li>
-              <li><a href="scheme.html" class="sidebar-link">
-                <span>Schemes</span>
-              </a></li>
-              <li><a href="acts.html" class="sidebar-link">
-                <span>Acts</span>
-              </a></li>
-              <li><a href="faqs.html" class="sidebar-link">
-                <span>Rules</span>
-              </a></li>
-            </ul>
+      <!-- English Content -->
+      <div class="english-content">
+        <section class="hero">
+          <h2>Screen Reader Access</h2>
+        </section>
+        <div class="main-content-with-sidebar">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3>Main Content</h3>
+              <ul>
+                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                  <span>Meghalaya Day Award</span>
+                </a></li>
+                <li><a href="scheme.html" class="sidebar-link">
+                  <span>Schemes</span>
+                </a></li>
+                <li><a href="acts.html" class="sidebar-link">
+                  <span>Acts</span>
+                </a></li>
+                <li><a href="faqs.html" class="sidebar-link">
+                  <span>Rules</span>
+                </a></li>
+              </ul>
+            </div>
+          </aside>
+          <!-- Main Content -->
+          <div class="main-content">
+            <section class="content-section">
+              <h1>Screen Reader Access</h1>
+              <p>Assistive Technologies are meant to cater to the needs of people with various impairments like Visual, Hearing, Mobility, and Learning impairment. An assistive technology helps differently abled people in rendering or viewing a webpage. Screen Readers are assistive devices that convert text into synthesized speech to facilitate visually impaired users to listen to and comprehend the content on a webpage.</p>
+              <p>Following links can be visited to get more information about assistive technologies and screen readers:</p>
+              <ul>
+                <li><a href="http://www.screenreader.net" target="_blank">http://www.screenreader.net</a></li>
+                <li><a href="http://www.freedomscientific.com" target="_blank">http://www.freedomscientific.com</a></li>
+                <li><a href="http://www.gwmicro.com" target="_blank">http://www.gwmicro.com</a></li>
+                <li><a href="http://www.spectronicsinoz.com" target="_blank">http://www.spectronicsinoz.com</a></li>
+              </ul>
+              <p>The "Guidelines for Indian Government Websites" website complies with World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.0 level AA. This will enable people with visual impairments to access the website using assistive technologies, such as screen readers. The information of the website is accessible with different screen readers, such as:</p>
+              <ul>
+                <li>J.A.W.S. (Job Access With Speech)</li>
+                <li>N.V.D.A. (Non Visual Desktop Access)</li>
+                <li>S.A.F.A. (Screen Access For All)</li>
+                <li>Supernova</li>
+                <li>Window-Eyes</li>
+              </ul>
+              <h2>Information Related to Various Screen Readers</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Screen Reader</th>
+                    <th>Website</th>
+                    <th>Free or Commercial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Non Visual Desktop Access (N.V.D.A.)</td>
+                    <td><a href="http://www.nvda-project.org" target="_blank">http://www.nvda-project.org</a></td>
+                    <td>Free</td>
+                  </tr>
+                  <tr>
+                    <td>System Access To Go</td>
+                    <td><a href="http://www.satogo.com" target="_blank">http://www.satogo.com</a></td>
+                    <td>Free</td>
+                  </tr>
+                  <tr>
+                    <td>Thunder</td>
+                    <td><a href="http://www.screenreader.net/index.php?pageid=2" target="_blank">http://www.screenreader.net/index.php?pageid=2</a></td>
+                    <td>Free</td>
+                  </tr>
+                  <tr>
+                    <td>WebAnywhere</td>
+                    <td><a href="http://webanywhere.cs.washington.edu/wa.php" target="_blank">http://webanywhere.cs.washington.edu/wa.php</a></td>
+                    <td>Free</td>
+                  </tr>
+                  <tr>
+                    <td>Hal</td>
+                    <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=5" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=5</a></td>
+                    <td>Commercial</td>
+                  </tr>
+                  <tr>
+                    <td>J.A.W.S. (Job Access With Speech)</td>
+                    <td><a href="http://www.freedomscientific.com/jaws-hq.asp" target="_blank">http://www.freedomscientific.com/jaws-hq.asp</a></td>
+                    <td>Commercial</td>
+                  </tr>
+                  <tr>
+                    <td>Supernova</td>
+                    <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=1" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=1</a></td>
+                    <td>Commercial</td>
+                  </tr>
+                  <tr>
+                    <td>Window-Eyes</td>
+                    <td><a href="http://www.gwmicro.com/Window-Eyes/" target="_blank">http://www.gwmicro.com/Window-Eyes/</a></td>
+                    <td>Commercial</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
           </div>
-        </aside>
-        <!-- Main Content -->
-        <div class="main-content">
-          <section class="content-section">
-            <h1>Screen Reader Access</h1>
-            <p>Assistive Technologies are meant to cater to the needs of people with various impairments like Visual, Hearing, Mobility, and Learning impairment. An assistive technology helps differently abled people in rendering or viewing a webpage. Screen Readers are assistive devices that convert text into synthesized speech to facilitate visually impaired users to listen to and comprehend the content on a webpage.</p>
-            <p>Following links can be visited to get more information about assistive technologies and screen readers:</p>
-            <ul>
-              <li><a href="http://www.screenreader.net" target="_blank">http://www.screenreader.net</a></li>
-              <li><a href="http://www.freedomscientific.com" target="_blank">http://www.freedomscientific.com</a></li>
-              <li><a href="http://www.gwmicro.com" target="_blank">http://www.gwmicro.com</a></li>
-              <li><a href="http://www.spectronicsinoz.com" target="_blank">http://www.spectronicsinoz.com</a></li>
-            </ul>
-            <p>The "Guidelines for Indian Government Websites" website complies with World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.0 level AA. This will enable people with visual impairments to access the website using assistive technologies, such as screen readers. The information of the website is accessible with different screen readers, such as:</p>
-            <ul>
-              <li>J.A.W.S. (Job Access With Speech)</li>
-              <li>N.V.D.A. (Non Visual Desktop Access)</li>
-              <li>S.A.F.A. (Screen Access For All)</li>
-              <li>Supernova</li>
-              <li>Window-Eyes</li>
-            </ul>
-            <h2>Information Related to Various Screen Readers</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Screen Reader</th>
-                  <th>Website</th>
-                  <th>Free or Commercial</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Non Visual Desktop Access (N.V.D.A.)</td>
-                  <td><a href="http://www.nvda-project.org" target="_blank">http://www.nvda-project.org</a></td>
-                  <td>Free</td>
-                </tr>
-                <tr>
-                  <td>System Access To Go</td>
-                  <td><a href="http://www.satogo.com" target="_blank">http://www.satogo.com</a></td>
-                  <td>Free</td>
-                </tr>
-                <tr>
-                  <td>Thunder</td>
-                  <td><a href="http://www.screenreader.net/index.php?pageid=2" target="_blank">http://www.screenreader.net/index.php?pageid=2</a></td>
-                  <td>Free</td>
-                </tr>
-                <tr>
-                  <td>WebAnywhere</td>
-                  <td><a href="http://webanywhere.cs.washington.edu/wa.php" target="_blank">http://webanywhere.cs.washington.edu/wa.php</a></td>
-                  <td>Free</td>
-                </tr>
-                <tr>
-                  <td>Hal</td>
-                  <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=5" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=5</a></td>
-                  <td>Commercial</td>
-                </tr>
-                <tr>
-                  <td>J.A.W.S. (Job Access With Speech)</td>
-                  <td><a href="http://www.freedomscientific.com/jaws-hq.asp" target="_blank">http://www.freedomscientific.com/jaws-hq.asp</a></td>
-                  <td>Commercial</td>
-                </tr>
-                <tr>
-                  <td>Supernova</td>
-                  <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=1" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=1</a></td>
-                  <td>Commercial</td>
-                </tr>
-                <tr>
-                  <td>Window-Eyes</td>
-                  <td><a href="http://www.gwmicro.com/Window-Eyes/" target="_blank">http://www.gwmicro.com/Window-Eyes/</a></td>
-                  <td>Commercial</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+        </div>
+      </div>
+
+      <!-- Hindi Content -->
+      <div class="hindi-content" style="display:none">
+        <section class="hero">
+          <h2>स्क्रीन रीडर एक्सेस</h2>
+        </section>
+        <div class="main-content-with-sidebar">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3>मुख्य विषयवस्तु</h3>
+              <ul>
+                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                  <span>मेघालय दिवस पुरस्कार</span>
+                </a></li>
+                <li><a href="scheme.html" class="sidebar-link">
+                  <span>योजनाएं</span>
+                </a></li>
+                <li><a href="acts.html" class="sidebar-link">
+                  <span>अधिनियम</span>
+                </a></li>
+                <li><a href="faqs.html" class="sidebar-link">
+                  <span>नियम</span>
+                </a></li>
+              </ul>
+            </div>
+          </aside>
+          <!-- Main Content -->
+          <div class="main-content">
+            <section class="content-section">
+              <h1>स्क्रीन रीडर एक्सेस</h1>
+              <p>सहायक प्रौद्योगिकियाँ विभिन्न प्रकार की दिव्यांगताओं जैसे दृष्टिबाधित, श्रवणबाधित, गतिशीलता और सीखने की अक्षमता वाले लोगों की आवश्यकताओं को पूरा करने के लिए हैं। सहायक प्रौद्योगिकी दिव्यांग लोगों को वेबपेज देखने या समझने में मदद करती है। स्क्रीन रीडर सहायक उपकरण हैं जो टेक्स्ट को संश्लेषित भाषण में परिवर्तित करते हैं ताकि दृष्टिबाधित उपयोगकर्ता वेबपेज की सामग्री सुन और समझ सकें।</p>
+              <p>सहायक प्रौद्योगिकियों और स्क्रीन रीडर के बारे में अधिक जानकारी के लिए निम्नलिखित लिंक देखे जा सकते हैं:</p>
+              <ul>
+                <li><a href="http://www.screenreader.net" target="_blank">http://www.screenreader.net</a></li>
+                <li><a href="http://www.freedomscientific.com" target="_blank">http://www.freedomscientific.com</a></li>
+                <li><a href="http://www.gwmicro.com" target="_blank">http://www.gwmicro.com</a></li>
+                <li><a href="http://www.spectronicsinoz.com" target="_blank">http://www.spectronicsinoz.com</a></li>
+              </ul>
+              <p>"भारतीय सरकारी वेबसाइटों के लिए दिशानिर्देश" वेबसाइट वर्ल्ड वाइड वेब कंसोर्टियम (W3C) वेब कंटेंट एक्सेसिबिलिटी गाइडलाइंस (WCAG) 2.0 स्तर AA का अनुपालन करती है। यह दृष्टिबाधित लोगों को स्क्रीन रीडर जैसी सहायक प्रौद्योगिकियों का उपयोग करके वेबसाइट तक पहुंचने में सक्षम बनाएगा। वेबसाइट की जानकारी विभिन्न स्क्रीन रीडर के साथ सुलभ है, जैसे:</p>
+              <ul>
+                <li>जॉब एक्सेस विद स्पीच (J.A.W.S.)</li>
+                <li>नॉन विजुअल डेस्कटॉप एक्सेस (N.V.D.A.)</li>
+                <li>स्क्रीन एक्सेस फॉर ऑल (S.A.F.A.)</li>
+                <li>सुपरनोवा</li>
+                <li>विंडो-आईज</li>
+              </ul>
+              <h2>विभिन्न स्क्रीन रीडर से संबंधित जानकारी</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>स्क्रीन रीडर</th>
+                    <th>वेबसाइट</th>
+                    <th>मुफ्त या वाणिज्यिक</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>नॉन विजुअल डेस्कटॉप एक्सेस (N.V.D.A.)</td>
+                    <td><a href="http://www.nvda-project.org" target="_blank">http://www.nvda-project.org</a></td>
+                    <td>मुफ्त</td>
+                  </tr>
+                  <tr>
+                    <td>सिस्टम एक्सेस टू गो</td>
+                    <td><a href="http://www.satogo.com" target="_blank">http://www.satogo.com</a></td>
+                    <td>मुफ्त</td>
+                  </tr>
+                  <tr>
+                    <td>थंडर</td>
+                    <td><a href="http://www.screenreader.net/index.php?pageid=2" target="_blank">http://www.screenreader.net/index.php?pageid=2</a></td>
+                    <td>मुफ्त</td>
+                  </tr>
+                  <tr>
+                    <td>वेबएनीवेयर</td>
+                    <td><a href="http://webanywhere.cs.washington.edu/wa.php" target="_blank">http://webanywhere.cs.washington.edu/wa.php</a></td>
+                    <td>मुफ्त</td>
+                  </tr>
+                  <tr>
+                    <td>हाल</td>
+                    <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=5" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=5</a></td>
+                    <td>वाणिज्यिक</td>
+                  </tr>
+                  <tr>
+                    <td>जॉब एक्सेस विद स्पीच (J.A.W.S.)</td>
+                    <td><a href="http://www.freedomscientific.com/jaws-hq.asp" target="_blank">http://www.freedomscientific.com/jaws-hq.asp</a></td>
+                    <td>वाणिज्यिक</td>
+                  </tr>
+                  <tr>
+                    <td>सुपरनोवा</td>
+                    <td><a href="http://www.yourdolphin.co.uk/productdetail.asp?id=1" target="_blank">http://www.yourdolphin.co.uk/productdetail.asp?id=1</a></td>
+                    <td>वाणिज्यिक</td>
+                  </tr>
+                  <tr>
+                    <td>विंडो-आईज</td>
+                    <td><a href="http://www.gwmicro.com/Window-Eyes/" target="_blank">http://www.gwmicro.com/Window-Eyes/</a></td>
+                    <td>वाणिज्यिक</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
         </div>
       </div>
     </main>
@@ -181,42 +306,119 @@
 
   <!-- Footer -->
   <footer>
-  <div class="footer-main">
-    <div class="footer-copy">
-      <p>
-        Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-      </p>
-      <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
-      <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+    <div class="footer-main">
+      <div class="footer-copy english-content">
+        <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.</p>
+        <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
+        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+      </div>
+      <div class="footer-copy hindi-content" style="display:none">
+        <p>साइट का डिजाइन और रखरखाव राष्ट्रीय सूचना विज्ञान केंद्र, मेघालय राज्य केंद्र द्वारा किया गया है।</p>
+        <p>&copy; 2023 गृह (राजनीतिक) विभाग, मेघालय</p>
+        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+      </div>
+      <div class="footer-sections english-content">
+        <div class="footer-section">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">RTI</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Downloads</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Access</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Other Resources</h4>
+          <ul>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-sections hindi-content" style="display:none">
+        <div class="footer-section">
+          <h4>महत्वपूर्ण लिंक</h4>
+          <ul>
+            <li><a href="#">सूचना का अधिकार</a></li>
+            <li><a href="#">टेंडर</a></li>
+            <li><a href="#">डाउनलोड</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>त्वरित पहुंच</h4>
+          <ul>
+            <li><a href="index.html">होम</a></li>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="contact.html">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>अन्य संसाधन</h4>
+          <ul>
+            <li><a href="#">साइटमैप</a></li>
+            <li><a href="#">सहायता</a></li>
+            <li><a href="#">प्रतिक्रिया</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="footer-sections">
-      <div class="footer-section">
-        <h4>Important Links</h4>
-        <ul>
-          <li><a href="#">RTI</a></li>
-          <li><a href="#">Tenders</a></li>
-          <li><a href="#">Downloads</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Access</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Other Resources</h4>
-        <ul>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial language from localStorage or default to English
+      let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+      
+      function updateLanguage(lang) {
+        currentLang = lang;
+        
+        // Update content visibility
+        const englishElements = document.querySelectorAll('.english-content');
+        const hindiElements = document.querySelectorAll('.hindi-content');
+        
+        if (lang === 'en') {
+          englishElements.forEach(el => el.style.display = '');
+          hindiElements.forEach(el => el.style.display = 'none');
+          document.getElementById('hindi-btn').style.display = 'inline-block';
+          document.getElementById('english-btn').style.display = 'none';
+          document.title = "Screen Reader Access - Home (Political) Department";
+          document.documentElement.lang = 'en';
+        } else {
+          englishElements.forEach(el => el.style.display = 'none');
+          hindiElements.forEach(el => el.style.display = '');
+          document.getElementById('english-btn').style.display = 'inline-block';
+          document.getElementById('hindi-btn').style.display = 'none';
+          document.title = "स्क्रीन रीडर एक्सेस - गृह (राजनीतिक) विभाग";
+          document.documentElement.lang = 'hi';
+        }
+        
+        // Save preference
+        localStorage.setItem('preferredLanguage', lang);
+      }
+
+      // Set up event listeners
+      document.getElementById('english-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('en');
+      });
+      
+      document.getElementById('hindi-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('hi');
+      });
+
+      // Initialize
+      updateLanguage(currentLang);
+    });
+  </script>
   <script src="js/index.js"></script>
 </body>
 </html>

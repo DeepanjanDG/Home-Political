@@ -144,35 +144,42 @@
   <div class="utility-bar">
     <div class="container">
       <div class="utility-group">
-        <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
+        <button id="skip-to-main-content-btn" class="utility-btn english-content">Skip to main content</button>
+        <button id="skip-to-main-content-btn-hi" class="utility-btn hindi-content" style="display:none">मुख्य सामग्री पर जाएं</button>
       </div>
       <div class="utility-group">
-        <button id="screen-reader-access-btn" class="utility-btn">Screen Reader Access</button>
+        <button id="screen-reader-access-btn" class="utility-btn english-content">Screen Reader Access</button>
+        <button id="screen-reader-access-btn-hi" class="utility-btn hindi-content" style="display:none">स्क्रीन रीडर एक्सेस</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Text Size:</span>
+        <span class="utility-label english-content">Text Size:</span>
+        <span class="utility-label hindi-content" style="display:none">टेक्स्ट आकार:</span>
         <button class="utility-btn text-size-btn" data-size="small" title="Decrease text size">&#8722;A</button>
         <button class="utility-btn text-size-btn" data-size="default" title="Default text size">A</button>
         <button class="utility-btn text-size-btn" data-size="large" title="Increase text size">A&#43;</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Contrast:</span>
+        <span class="utility-label english-content">Contrast:</span>
+        <span class="utility-label hindi-content" style="display:none">कंट्रास्ट:</span>
         <button class="utility-btn contrast-btn contrast-default-btn" data-theme="default" title="Default Contrast">A</button>
         <button class="utility-btn contrast-btn contrast-yellow-black-btn" data-theme="yellow-black" title="Yellow on Black">A</button>
         <button class="utility-btn contrast-btn contrast-black-white-btn" data-theme="black-white" title="Black on White">A</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Spacing:</span>
-        <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
-        <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
+        <span class="utility-label english-content">Spacing:</span>
+        <span class="utility-label hindi-content" style="display:none">स्पेसिंग:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide" title="Increase spacing">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal" title="Normal spacing">Off</button>
       </div>
       <div class="utility-group">
         <button id="hindi-btn" class="utility-btn">हिन्दी</button>
         <button id="english-btn" class="utility-btn" style="display: none;">English</button>
       </div>
       <div class="utility-group search-group">
-        <input type="text" id="search-input" placeholder="Search..." class="search-input">
-        <button id="search-btn" class="search-btn">Go</button>
+        <input type="text" id="search-input" placeholder="Search..." class="search-input english-content">
+        <input type="text" id="search-input-hi" placeholder="खोजें..." class="search-input hindi-content" style="display:none">
+        <button id="search-btn" class="search-btn english-content">Go</button>
+        <button id="search-btn-hi" class="search-btn hindi-content" style="display:none">खोजें</button>
       </div>
     </div>
   </div>

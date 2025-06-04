@@ -5,42 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Acts - Home (Political) Department</title>
   <link rel="stylesheet" href="css/acts.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Accessibility Toolbar -->
   <div class="utility-bar">
     <div class="container">
       <div class="utility-group">
-        <button id="skip-to-main-content-btn" class="utility-btn">Skip to main content</button>
+        <button id="skip-to-main-content-btn" class="utility-btn english-content">Skip to main content</button>
+        <button id="skip-to-main-content-btn-hi" class="utility-btn hindi-content" style="display:none">मुख्य सामग्री पर जाएं</button>
       </div>
       <div class="utility-group">
-        <button id="screen-reader-access-btn" class="utility-btn">Screen Reader Access</button>
+        <button id="screen-reader-access-btn" class="utility-btn english-content">Screen Reader Access</button>
+        <button id="screen-reader-access-btn-hi" class="utility-btn hindi-content" style="display:none">स्क्रीन रीडर एक्सेस</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Text Size:</span>
+        <span class="utility-label english-content">Text Size:</span>
+        <span class="utility-label hindi-content" style="display:none">टेक्स्ट आकार:</span>
         <button class="utility-btn text-size-btn" data-size="small" title="Decrease text size">&#8722;A</button>
         <button class="utility-btn text-size-btn" data-size="default" title="Default text size">A</button>
         <button class="utility-btn text-size-btn" data-size="large" title="Increase text size">A&#43;</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Contrast:</span>
+        <span class="utility-label english-content">Contrast:</span>
+        <span class="utility-label hindi-content" style="display:none">कंट्रास्ट:</span>
         <button class="utility-btn contrast-btn contrast-default-btn" data-theme="default" title="Default Contrast">A</button>
         <button class="utility-btn contrast-btn contrast-yellow-black-btn" data-theme="yellow-black" title="Yellow on Black">A</button>
         <button class="utility-btn contrast-btn contrast-black-white-btn" data-theme="black-white" title="Black on White">A</button>
       </div>
       <div class="utility-group">
-        <span class="utility-label">Spacing:</span>
-        <button class="utility-btn spacing-btn" data-spacing="wide">On</button>
-        <button class="utility-btn spacing-btn" data-spacing="normal">Off</button>
+        <span class="utility-label english-content">Spacing:</span>
+        <span class="utility-label hindi-content" style="display:none">स्पेसिंग:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide" title="Increase spacing">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal" title="Normal spacing">Off</button>
       </div>
       <div class="utility-group">
         <button id="hindi-btn" class="utility-btn">हिन्दी</button>
         <button id="english-btn" class="utility-btn" style="display: none;">English</button>
       </div>
       <div class="utility-group search-group">
-        <input type="text" id="search-input" placeholder="Search..." class="search-input">
-        <button id="search-btn" class="search-btn">Go</button>
+        <input type="text" id="search-input" placeholder="Search..." class="search-input english-content">
+        <input type="text" id="search-input-hi" placeholder="खोजें..." class="search-input hindi-content" style="display:none">
+        <button id="search-btn" class="search-btn english-content">Go</button>
+        <button id="search-btn-hi" class="search-btn hindi-content" style="display:none">खोजें</button>
       </div>
     </div>
   </div>
@@ -48,20 +55,24 @@
   <!-- Header -->
   <header>
     <div class="topbar">
-    <div class="container">
-      <div class="logo-title-container">
-        <a href="index.html" class="logo-link">
-          <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
-        </a>
-        <h1>
-          Home Political Department<br>
-          <span>Government of Meghalaya</span>
-        </h1>
-     </div>
-    </div>
+      <div class="container">
+        <div class="logo-title-container">
+          <a href="index.html" class="logo-link">
+            <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
+          </a>
+          <h1 class="english-content">
+            Home Political Department<br>
+            <span>Government of Meghalaya</span>
+          </h1>
+          <h1 class="hindi-content" style="display:none">
+            गृह राजनीतिक विभाग<br>
+            <span>मेघालय सरकार</span>
+          </h1>
+        </div>
+      </div>
     </div>
     <nav>
-      <ul>
+      <ul class="english-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="notification.html">Notifications</a></li>
         <li><a href="acts.html" class="active">Reports</a></li>
@@ -70,6 +81,15 @@
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
+      <ul class="hindi-content" style="display:none">
+        <li><a href="index.html">होम</a></li>
+        <li><a href="notification.html">अधिसूचनाएं</a></li>
+        <li><a href="acts.html" class="active">रिपोर्ट</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="faqs.html">सामान्य प्रश्न</a></li>
+        <li><a href="contact.html">संपर्क करें</a></li>
+        <li><a href="sitemap.html">साइटमैप</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -77,138 +97,309 @@
   <div class="main-wrapper">
     <!-- Main Content with Sidebar -->
     <main id="main-content">
-      <section class="hero">
-        <h2>Acts & Publications</h2>
-      </section>
+      <!-- English Content -->
+      <div class="english-content">
+        <section class="hero">
+          <h2>Acts & Publications</h2>
+        </section>
 
-    <div class="main-content-with-sidebar">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-          <div class="sidebar-section">
-          <h3>Main Content</h3>
-          <ul>
-            <li><a href="meghalayadayaward.html" class="sidebar-link">
-              <span>Meghalaya Day Award</span>
-            </a></li>
-            <li><a href="scheme.html" class="sidebar-link">
-              <span>Schemes</span>
-            </a></li>
-            <li><a href="acts.html" class="sidebar-link">
-              <span>Acts</span>
-            </a></li>
-            <li><a href="faqs.html" class="sidebar-link">
-              <span>Rules</span>
-            </a></li>
-          </ul>
+        <div class="main-content-with-sidebar">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3>Main Content</h3>
+              <ul>
+                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                  <span>Meghalaya Day Award</span>
+                </a></li>
+                <li><a href="scheme.html" class="sidebar-link">
+                  <span>Schemes</span>
+                </a></li>
+                <li><a href="acts.html" class="sidebar-link">
+                  <span>Acts</span>
+                </a></li>
+                <li><a href="faqs.html" class="sidebar-link">
+                  <span>Rules</span>
+                </a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="main-content">
+            <section class="content-section" id="reports-section">
+              <h2>Available Acts & Publications</h2>
+              <ul class="report-list">
+                <li>
+                  <strong>Meghalaya Essential Services Maintenance Act</strong>
+                  <span class="report-date">Released: 2018</span>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>Meghalaya Essential Services Maintenance Amendment Act</strong>
+                  <span class="report-date">Released: 2018</span>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>Meghalaya Lokayukta (Amendment) Act</strong>
+                  <span class="report-date">Released: 2019</span>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>Meghalaya Lokayukta (Amendment) Act</strong>
+                  <span class="report-date">Released: 2021</span>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>Meghalaya Language Act</strong>
+                  <span class="report-date">Released: 2005</span>
+                  <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>The Meghalaya (Benami Transaction) (Amendment) Act</strong>
+                  <span class="report-date">Released: 2016</span>
+                  <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>The Meghalaya Lokayukta Act</strong>
+                  <span class="report-date">Released: 2014</span>
+                  <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>The Meghalaya Resident Safety and Security Act</strong>
+                  <span class="report-date">Released: 2016</span>
+                  <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+                <li>
+                  <strong>The Meghalaya Right to Public Services Act</strong>
+                  <span class="report-date">Released: 2021</span>
+                  <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
+                  <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn">View Online</a>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
-        </aside>
+      </div>
 
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="content-section" id="reports-section">
-        <h2>Available Acts & Publications</h2>
-        <ul class="report-list">
-        <li>
-            <strong>Meghalaya Essential Services Maintenance Act</strong>
-            <span class="report-date">Released: 2018</span>
-            <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>Meghalaya Essential Services Maintenance Amendment Act</strong>
-            <span class="report-date">Released: 2018</span>
-            <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>Meghalaya Lokayukta (Amendment) Act</strong>
-            <span class="report-date">Released: 2019</span>
-            <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>Meghalaya Lokayukta (Amendment) Act</strong>
-            <span class="report-date">Released: 2021</span>
-            <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>Meghalaya Language Act</strong>
-            <span class="report-date">Released: 2005</span>
-            <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>The Meghalaya (Benami Transaction) (Amendment) Act</strong>
-            <span class="report-date">Released: 2016</span>
-            <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>The Meghalaya Lokayukta Act</strong>
-            <span class="report-date">Released: 2014</span>
-            <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>The Meghalaya Resident Safety and Security Act</strong>
-            <span class="report-date">Released: 2016</span>
-            <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-        <li>
-            <strong>The Meghalaya Right to Public Services Act</strong>
-            <span class="report-date">Released: 2021</span>
-            <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn" download>Download PDF</a>
-            <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn">View Online</a>
-        </li>
-    </ul>
-  </section>
+      <!-- Hindi Content -->
+      <div class="hindi-content" style="display:none">
+        <section class="hero">
+          <h2>अधिनियम एवं प्रकाशन</h2>
+        </section>
+
+        <div class="main-content-with-sidebar">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3>मुख्य विषयवस्तु</h3>
+              <ul>
+                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                  <span>मेघालय दिवस पुरस्कार</span>
+                </a></li>
+                <li><a href="scheme.html" class="sidebar-link">
+                  <span>योजनाएं</span>
+                </a></li>
+                <li><a href="acts.html" class="sidebar-link">
+                  <span>अधिनियम</span>
+                </a></li>
+                <li><a href="faqs.html" class="sidebar-link">
+                  <span>नियम</span>
+                </a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="main-content">
+            <section class="content-section" id="reports-section">
+              <h2>उपलब्ध अधिनियम एवं प्रकाशन</h2>
+              <ul class="report-list">
+                <li>
+                  <strong>मेघालय आवश्यक सेवा रखरखाव अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2018</span>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance Act..pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय आवश्यक सेवा रखरखाव संशोधन अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2018</span>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/Meghalaya Essential Services Maintenance (Amendment) Act, 2018.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय लोकायुक्त (संशोधन) अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2019</span>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2019.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय लोकायुक्त (संशोधन) अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2021</span>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/Meghalaya Lokayukta (Amendment) Act, 2021.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय भाषा अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2005</span>
+                  <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/Meghalaya_Language_Act_2005.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय (बेनामी लेनदेन) (संशोधन) अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2016</span>
+                  <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/The Meghalaya (Benami Transaction) (Amendment) Act, 2016.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय लोकायुक्त अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2014</span>
+                  <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/The Meghalaya Lokayukta Act, 2014.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय निवासी सुरक्षा एवं सुरक्षा अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2016</span>
+                  <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/The Meghalaya Resident Safety and Security Act, 2016.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+                <li>
+                  <strong>मेघालय सार्वजनिक सेवा अधिकार अधिनियम</strong>
+                  <span class="report-date">प्रकाशित: 2021</span>
+                  <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn" download>PDF डाउनलोड</a>
+                  <a href="acts_pdfs/The Meghalaya Right to Public Services Act, 2021.pdf" target="_blank" class="utility-btn">ऑनलाइन देखें</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
-</div>
-</main>
-</div>
 
   <!-- Footer -->
   <footer>
-  <div class="footer-main">
-    <div class="footer-copy">
-      <p>
-        Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-      </p>
-      <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
-      <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+    <div class="footer-main">
+      <div class="footer-copy english-content">
+        <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.</p>
+        <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
+        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+      </div>
+      <div class="footer-copy hindi-content" style="display:none">
+        <p>साइट का डिजाइन और रखरखाव राष्ट्रीय सूचना विज्ञान केंद्र, मेघालय राज्य केंद्र द्वारा किया गया है।</p>
+        <p>&copy; 2023 गृह (राजनीतिक) विभाग, मेघालय</p>
+        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+      </div>
+      <div class="footer-sections english-content">
+        <div class="footer-section">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">RTI</a></li>
+            <li><a href="#">Tenders</a></li>
+            <li><a href="#">Downloads</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Access</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Other Resources</h4>
+          <ul>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-sections hindi-content" style="display:none">
+        <div class="footer-section">
+          <h4>महत्वपूर्ण लिंक</h4>
+          <ul>
+            <li><a href="#">सूचना का अधिकार</a></li>
+            <li><a href="#">टेंडर</a></li>
+            <li><a href="#">डाउनलोड</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>त्वरित पहुंच</h4>
+          <ul>
+            <li><a href="index.html">होम</a></li>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="contact.html">संपर्क</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>अन्य संसाधन</h4>
+          <ul>
+            <li><a href="#">साइटमैप</a></li>
+            <li><a href="#">सहायता</a></li>
+            <li><a href="#">प्रतिक्रिया</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="footer-sections">
-      <div class="footer-section">
-        <h4>Important Links</h4>
-        <ul>
-          <li><a href="#">RTI</a></li>
-          <li><a href="#">Tenders</a></li>
-          <li><a href="#">Downloads</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Access</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Other Resources</h4>
-        <ul>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
   
-  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial language from localStorage or default to English
+      let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+      
+      function updateLanguage(lang) {
+        currentLang = lang;
+        
+        // Update content visibility
+        const englishElements = document.querySelectorAll('.english-content');
+        const hindiElements = document.querySelectorAll('.hindi-content');
+        
+        if (lang === 'en') {
+          englishElements.forEach(el => el.style.display = '');
+          hindiElements.forEach(el => el.style.display = 'none');
+          document.getElementById('hindi-btn').style.display = 'inline-block';
+          document.getElementById('english-btn').style.display = 'none';
+          document.title = "Acts - Home (Political) Department";
+          document.documentElement.lang = 'en';
+        } else {
+          englishElements.forEach(el => el.style.display = 'none');
+          hindiElements.forEach(el => el.style.display = '');
+          document.getElementById('english-btn').style.display = 'inline-block';
+          document.getElementById('hindi-btn').style.display = 'none';
+          document.title = "अधिनियम - गृह (राजनीतिक) विभाग";
+          document.documentElement.lang = 'hi';
+        }
+        
+        // Save preference
+        localStorage.setItem('preferredLanguage', lang);
+      }
 
+      // Set up event listeners
+      document.getElementById('english-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('en');
+      });
+      
+      document.getElementById('hindi-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('hi');
+      });
+
+      // Initialize
+      updateLanguage(currentLang);
+    });
+  </script>
+  <script src="js/index.js"></script>
 </body>
 </html>
