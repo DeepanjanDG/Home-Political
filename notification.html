@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Notifications - Home (Political) Department</title>
   <link rel="stylesheet" href="css/index.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     /* Notification Page Specific Styles */
     .notification-page {
@@ -84,10 +84,6 @@
       gap: 8px;
     }
     
-    /* .notification-date::before {
-      content: "📅";
-    } */
-    
     .notification-title {
       color: var(--primary-color);
       font-size: 1.3rem;
@@ -119,13 +115,6 @@
       background: var(--primary-color);
     }
     
-    /* .notification-link.pdf::before {
-      content: "📄 ";
-    }
-    
-    .notification-link.view::before {
-      content: "👁️ ";
-    } */
     
     @media (max-width: 768px) {
       .notifications-container {
@@ -191,14 +180,18 @@
         <a href="index.html" class="logo-link">
           <img src="images/Emblem_of_Meghalaya.svg.png" alt="Department Logo" class="logo">
         </a>
-        <h1>
+        <h1 class="english-content">
           Home Political Department<br>
           <span>Government of Meghalaya</span>
+        </h1>
+        <h1 class="hindi-content" style="display:none">
+          गृह राजनीतिक विभाग<br>
+          <span>मेघालय सरकार</span>
         </h1>
       </div>
     </div>
     <nav>
-      <ul>
+      <ul class="english-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="notification.html" class="active">Notifications</a></li>
         <li><a href="acts.html">Reports</a></li>
@@ -207,88 +200,184 @@
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
+      <ul class="hindi-content" style="display:none">
+        <li><a href="index.html">होम</a></li>
+        <li><a href="notification.html" class="active">अधिसूचनाएं</a></li>
+        <li><a href="acts.html">रिपोर्ट</a></li>
+        <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="faqs.html">सामान्य प्रश्न</a></li>
+        <li><a href="contact.html">संपर्क करें</a></li>
+        <li><a href="sitemap.html">साइटमैप</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- Main Content -->
   <main class="notification-page">
-    <div class="notification-header">
-      <h1>Official Notifications</h1>
-      <p>Stay updated with the latest announcements, circulars, and official releases from the Home (Political) Department, Government of Meghalaya.</p>
+    <!-- English Content -->
+    <div class="english-content">
+      <div class="notification-header">
+        <h1>Official Notifications</h1>
+        <p>Stay updated with the latest announcements, circulars, and official releases from the Home (Political) Department, Government of Meghalaya.</p>
+      </div>
+      
+      <div class="notification-filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Circulars</button>
+        <button class="filter-btn">Orders</button>
+        <button class="filter-btn">Tenders</button>
+        <button class="filter-btn">Press Releases</button>
+      </div>
+      
+      <div class="notifications-container">
+        <!-- Notification 1 -->
+        <div class="notification-card">
+          <div class="notification-date">15 January 2024</div>
+          <h3 class="notification-title">Revised Guidelines for Security Protocols</h3>
+          <p class="notification-desc">Implementation of new security measures across government offices in Meghalaya effective from 1st February 2024.</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Notification for declaring HNLC to be unlawful association.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications_pdf/Notification for declaring HNLC to be unlawful association.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Notification 2 -->
+        <div class="notification-card">
+          <div class="notification-date">5 January 2024</div>
+          <h3 class="notification-title">Recruitment Notice for Security Personnel</h3>
+          <p class="notification-desc">Applications invited for 50 positions of Security Personnel in various departments. Last date: 30th January 2024.</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Notification regarding all professionalsstudents from Meghalaya who are planning to go abroad for workstudies or workingstudying abroad may furnish all details through onl.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications_pdf/Notification regarding all professionalsstudents from Meghalaya who are planning to go abroad for workstudies or workingstudying abroad may furnish all details through onl.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Notification 3 -->
+        <div class="notification-card">
+          <div class="notification-date">28 December 2023</div>
+          <h3 class="notification-title">Holiday List for 2024</h3>
+          <p class="notification-desc">Official list of holidays to be observed by all government offices in Meghalaya during the year 2024.</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Revised of the guidelines to the Meghalaya Day Awards.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications_pdf/Revised of the guidelines to the Meghalaya Day Awards.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Notification 4 -->
+        <div class="notification-card">
+          <div class="notification-date">20 December 2023</div>
+          <h3 class="notification-title">Public Advisory for Year-End Celebrations</h3>
+          <p class="notification-desc">Safety guidelines and regulations for public gatherings during New Year celebrations across the state.</p>
+          <div class="notification-actions">
+            <a href="notifications/public-advisory-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications/public-advisory-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Notification 5 -->
+        <div class="notification-card">
+          <div class="notification-date">10 December 2023</div>
+          <h3 class="notification-title">Amendment to Security Clearance Procedures</h3>
+          <p class="notification-desc">Revised procedures for obtaining security clearances for government employees and contractors.</p>
+          <div class="notification-actions">
+            <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Notification 6 -->
+        <div class="notification-card">
+          <div class="notification-date">1 December 2023</div>
+          <h3 class="notification-title">Invitation for Security Equipment Tenders</h3>
+          <p class="notification-desc">Open tender notice for procurement of security equipment for government buildings. Submission deadline: 15th January 2024.</p>
+          <div class="notification-actions">
+            <a href="notifications/security-tender-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
+            <a href="notifications/security-tender-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="notification-filters">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Circulars</button>
-      <button class="filter-btn">Orders</button>
-      <button class="filter-btn">Tenders</button>
-      <button class="filter-btn">Press Releases</button>
-    </div>
-    
-    <div class="notifications-container">
-      <!-- Notification 1 -->
-      <div class="notification-card">
-        <div class="notification-date">15 January 2024</div>
-        <h3 class="notification-title">Revised Guidelines for Security Protocols</h3>
-        <p class="notification-desc">Implementation of new security measures across government offices in Meghalaya effective from 1st February 2024.</p>
-        <div class="notification-actions">
-          <a href="notifications/security-guidelines-jan2024.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/security-guidelines-jan2024.pdf" class="notification-link view" target="_blank">View Details</a>
-        </div>
+
+    <!-- Hindi Content -->
+    <div class="hindi-content" style="display:none">
+      <div class="notification-header">
+        <h1>आधिकारिक अधिसूचनाएं</h1>
+        <p>मेघालय सरकार के गृह (राजनीतिक) विभाग से नवीनतम घोषणाओं, परिपत्रों और आधिकारिक विज्ञप्तियों के साथ अपडेट रहें।</p>
       </div>
       
-      <!-- Notification 2 -->
-      <div class="notification-card">
-        <div class="notification-date">5 January 2024</div>
-        <h3 class="notification-title">Recruitment Notice for Security Personnel</h3>
-        <p class="notification-desc">Applications invited for 50 positions of Security Personnel in various departments. Last date: 30th January 2024.</p>
-        <div class="notification-actions">
-          <a href="notifications/recruitment-notice-jan2024.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/recruitment-notice-jan2024.pdf" class="notification-link view" target="_blank">View Details</a>
-        </div>
+      <div class="notification-filters">
+        <button class="filter-btn active">सभी</button>
+        <button class="filter-btn">परिपत्र</button>
+        <button class="filter-btn">आदेश</button>
+        <button class="filter-btn">निविदाएं</button>
+        <button class="filter-btn">प्रेस विज्ञप्तियां</button>
       </div>
       
-      <!-- Notification 3 -->
-      <div class="notification-card">
-        <div class="notification-date">28 December 2023</div>
-        <h3 class="notification-title">Holiday List for 2024</h3>
-        <p class="notification-desc">Official list of holidays to be observed by all government offices in Meghalaya during the year 2024.</p>
-        <div class="notification-actions">
-          <a href="notifications/holiday-list-2024.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/holiday-list-2024.pdf" class="notification-link view" target="_blank">View Details</a>
+      <div class="notifications-container">
+        <!-- Notification 1 -->
+        <div class="notification-card">
+          <div class="notification-date">15 जनवरी 2024</div>
+          <h3 class="notification-title">सुरक्षा प्रोटोकॉल के लिए संशोधित दिशा-निर्देश</h3>
+          <p class="notification-desc">1 फरवरी 2024 से प्रभावी मेघालय में सरकारी कार्यालयों में नए सुरक्षा उपायों का कार्यान्वयन।</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Notification for declaring HNLC to be unlawful association.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications_pdf/Notification for declaring HNLC to be unlawful association.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Notification 4 -->
-      <div class="notification-card">
-        <div class="notification-date">20 December 2023</div>
-        <h3 class="notification-title">Public Advisory for Year-End Celebrations</h3>
-        <p class="notification-desc">Safety guidelines and regulations for public gatherings during New Year celebrations across the state.</p>
-        <div class="notification-actions">
-          <a href="notifications/public-advisory-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/public-advisory-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        
+        <!-- Notification 2 -->
+        <div class="notification-card">
+          <div class="notification-date">5 जनवरी 2024</div>
+          <h3 class="notification-title">सुरक्षा कर्मियों के लिए भर्ती सूचना</h3>
+          <p class="notification-desc">विभिन्न विभागों में सुरक्षा कर्मियों की 50 पदों के लिए आवेदन आमंत्रित। अंतिम तिथि: 30 जनवरी 2024।</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Notification regarding all professionalsstudents from Meghalaya who are planning to go abroad for workstudies or workingstudying abroad may furnish all details through onl.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications_pdf/Notification regarding all professionalsstudents from Meghalaya who are planning to go abroad for workstudies or workingstudying abroad may furnish all details through onl.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Notification 5 -->
-      <div class="notification-card">
-        <div class="notification-date">10 December 2023</div>
-        <h3 class="notification-title">Amendment to Security Clearance Procedures</h3>
-        <p class="notification-desc">Revised procedures for obtaining security clearances for government employees and contractors.</p>
-        <div class="notification-actions">
-          <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        
+        <!-- Notification 3 -->
+        <div class="notification-card">
+          <div class="notification-date">28 दिसंबर 2023</div>
+          <h3 class="notification-title">2024 के लिए अवकाश सूची</h3>
+          <p class="notification-desc">वर्ष 2024 के दौरान मेघालय के सभी सरकारी कार्यालयों द्वारा मनाए जाने वाले अवकाशों की आधिकारिक सूची।</p>
+          <div class="notification-actions">
+            <a href="notifications_pdf/Revised of the guidelines to the Meghalaya Day Awards.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications_pdf/Revised of the guidelines to the Meghalaya Day Awards.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Notification 6 -->
-      <div class="notification-card">
-        <div class="notification-date">1 December 2023</div>
-        <h3 class="notification-title">Invitation for Security Equipment Tenders</h3>
-        <p class="notification-desc">Open tender notice for procurement of security equipment for government buildings. Submission deadline: 15th January 2024.</p>
-        <div class="notification-actions">
-          <a href="notifications/security-tender-dec2023.pdf" class="notification-link pdf" download>Download PDF</a>
-          <a href="notifications/security-tender-dec2023.pdf" class="notification-link view" target="_blank">View Details</a>
+        
+        <!-- Notification 4 -->
+        <div class="notification-card">
+          <div class="notification-date">20 दिसंबर 2023</div>
+          <h3 class="notification-title">वर्ष के अंत के उत्सवों के लिए जनता को सलाह</h3>
+          <p class="notification-desc">राज्य भर में नव वर्ष समारोह के दौरान सार्वजनिक सभाओं के लिए सुरक्षा दिशा-निर्देश और नियम।</p>
+          <div class="notification-actions">
+            <a href="notifications/public-advisory-dec2023.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications/public-advisory-dec2023.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
+        </div>
+        
+        <!-- Notification 5 -->
+        <div class="notification-card">
+          <div class="notification-date">10 दिसंबर 2023</div>
+          <h3 class="notification-title">सुरक्षा मंजूरी प्रक्रियाओं में संशोधन</h3>
+          <p class="notification-desc">सरकारी कर्मचारियों और ठेकेदारों के लिए सुरक्षा मंजूरी प्राप्त करने की संशोधित प्रक्रियाएं।</p>
+          <div class="notification-actions">
+            <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications/clearance-procedures-dec2023.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
+        </div>
+        
+        <!-- Notification 6 -->
+        <div class="notification-card">
+          <div class="notification-date">1 दिसंबर 2023</div>
+          <h3 class="notification-title">सुरक्षा उपकरणों की निविदाओं के लिए आमंत्रण</h3>
+          <p class="notification-desc">सरकारी भवनों के लिए सुरक्षा उपकरणों की खरीद के लिए खुली निविदा सूचना। प्रस्तुत करने की अंतिम तिथि: 15 जनवरी 2024।</p>
+          <div class="notification-actions">
+            <a href="notifications/security-tender-dec2023.pdf" class="notification-link pdf" download>PDF डाउनलोड करें</a>
+            <a href="notifications/security-tender-dec2023.pdf" class="notification-link view" target="_blank">विवरण देखें</a>
+          </div>
         </div>
       </div>
     </div>
@@ -297,14 +386,17 @@
   <!-- Footer -->
   <footer>
     <div class="footer-main">
-      <div class="footer-copy">
-        <p>
-          Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-        </p>
+      <div class="footer-copy english-content">
+        <p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.</p>
         <p>&copy; 2023 Home (Political) Department, Meghalaya</p>
         <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
       </div>
-      <div class="footer-sections">
+      <div class="footer-copy hindi-content" style="display:none">
+        <p>साइट का डिजाइन और रखरखाव राष्ट्रीय सूचना विज्ञान केंद्र, मेघालय राज्य केंद्र द्वारा किया गया है।</p>
+        <p>&copy; 2023 गृह (राजनीतिक) विभाग, मेघालय</p>
+        <img src="images/NIC_logo.svg.png" alt="NIC Logo" class="nic-logo">
+      </div>
+      <div class="footer-sections english-content">
         <div class="footer-section">
           <h4>Important Links</h4>
           <ul>
@@ -324,9 +416,35 @@
         <div class="footer-section">
           <h4>Other Resources</h4>
           <ul>
-            <li><a href="#">Sitemap</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
             <li><a href="#">Help</a></li>
             <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-sections hindi-content" style="display:none">
+        <div class="footer-section">
+          <h4>महत्वपूर्ण लिंक</h4>
+          <ul>
+            <li><a href="https://megrti.gov.in/">सूचना का अधिकार</a></li>
+            <li><a href="https://meghalaya.gov.in/">मेघालय सरकार</a></li>
+            <li><a href="https://www.india.gov.in/">भारत का राष्ट्रीय पोर्टल</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>त्वरित पहुंच</h4>
+          <ul>
+            <li><a href="index.html">होम</a></li>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="contact.html">संपर्क करें</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>अन्य संसाधन</h4>
+          <ul>
+            <li><a href="sitemap.html">साइटमैप</a></li>
+            <li><a href="#">सहायता</a></li>
+            <li><a href="#">प्रतिक्रिया</a></li>
           </ul>
         </div>
       </div>
@@ -334,8 +452,52 @@
   </footer>
 
   <script>
-    // Simple filter functionality
     document.addEventListener('DOMContentLoaded', function() {
+      // Set initial language from localStorage or default to English
+      let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+      
+      function updateLanguage(lang) {
+        currentLang = lang;
+        
+        // Update content visibility
+        const englishElements = document.querySelectorAll('.english-content');
+        const hindiElements = document.querySelectorAll('.hindi-content');
+        
+        if (lang === 'en') {
+          englishElements.forEach(el => el.style.display = '');
+          hindiElements.forEach(el => el.style.display = 'none');
+          document.getElementById('hindi-btn').style.display = 'inline-block';
+          document.getElementById('english-btn').style.display = 'none';
+          document.title = "Notifications - Home (Political) Department";
+          document.documentElement.lang = 'en';
+        } else {
+          englishElements.forEach(el => el.style.display = 'none');
+          hindiElements.forEach(el => el.style.display = '');
+          document.getElementById('english-btn').style.display = 'inline-block';
+          document.getElementById('hindi-btn').style.display = 'none';
+          document.title = "अधिसूचनाएं - गृह (राजनीतिक) विभाग";
+          document.documentElement.lang = 'hi';
+        }
+        
+        // Save preference
+        localStorage.setItem('preferredLanguage', lang);
+      }
+
+      // Set up event listeners
+      document.getElementById('english-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('en');
+      });
+      
+      document.getElementById('hindi-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('hi');
+      });
+
+      // Initialize
+      updateLanguage(currentLang);
+
+      // Filter functionality
       const filterButtons = document.querySelectorAll('.filter-btn');
       
       filterButtons.forEach(button => {

@@ -5,17 +5,19 @@ const screenReaderBtn = document.getElementById('screen-reader-access-btn');
 const searchInput = document.getElementById('search-input');
 
 
-// Smooth scrolling for "Skip to main content" button
-const skipToMainContentBtn = document.getElementById('skip-to-main-content-btn');
-if (skipToMainContentBtn) {
-  skipToMainContentBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-      mainContent.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
+// Smooth scrolling for "Skip to main content" buttons (English & Hindi)
+['skip-to-main-content-btn', 'skip-to-main-content-btn-hi'].forEach(id => {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) {
+        mainContent.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+});
 
 // Text Size Functionality
 const textSizeButtons = document.querySelectorAll('.text-size-btn');
@@ -91,12 +93,15 @@ if (searchBtn) {
 }
 
 
-// Screen Reader Access
- if (screenReaderBtn) {
-   screenReaderBtn.addEventListener('click', () => {
-     window.location.href = 'screen.html'; // Redirect to screen.html
-  });
- }
+// Screen Reader Access buttons (English & Hindi)
+['screen-reader-access-btn', 'screen-reader-access-btn-hi'].forEach(id => {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener('click', () => {
+      window.location.href = 'screen.html';
+    });
+  }
+});
 
 
 // Contrast Mode Toggle

@@ -22,7 +22,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 /* Contrast Modes */
@@ -92,7 +92,7 @@ body.contrast-black-white h6 {
   border-radius: 3px;
   padding: 5px 10px;
   cursor: pointer;
-  transition: background 0.2s;
+  /* transition: background 0.2s; */
 }
 .utility-btn:hover, .search-btn:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -210,7 +210,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 nav ul {
   list-style: none;
@@ -229,7 +229,7 @@ nav a {
   text-decoration: none;
   padding: 0.5rem 0;
   position: relative;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   font-family: var(--font-heading);
 }
 nav a::after {
@@ -240,7 +240,7 @@ nav a::after {
   bottom: 0;
   left: 0;
   background-color: var(--accent-color);
-  transition: width 0.3s ease;
+  /* transition: width 0.3s ease; */
 }
 nav a:hover::after {
   width: 100%;
@@ -273,6 +273,11 @@ nav a:active {
   nav a::after {
     display: none;
   }
+}
+
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
 }
 
 /* Main Wrapper & Flex Layout */
@@ -337,7 +342,7 @@ nav a:active {
   color: #2d3748;
   text-decoration: none;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  /* transition: all 0.25s ease; */
   background: #f8fafc;
   margin-bottom: 10px;
   border-left: 4px solid transparent;
@@ -627,7 +632,7 @@ footer {
   color: var(--white);
   text-decoration: none;
   font-size: 0.97rem;
-  transition: color 0.2s;
+  /* transition: color 0.2s; */
 }
 .footer-section ul li a:hover {
   color: var(--accent-color);

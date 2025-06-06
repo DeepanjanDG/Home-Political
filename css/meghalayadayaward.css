@@ -62,6 +62,11 @@ body.contrast-black-white h6 {
   padding: 0 20px;
 }
 
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
+}
+
 /* Utility Bar */
 .utility-bar {
   background-color: #004080;

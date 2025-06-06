@@ -60,6 +60,10 @@ body.contrast-black-white h6 {
   margin: 0 auto;
   padding: 0 20px;
 }
+/* Hindi Content Styles */
+.hindi-content, .content-hindi {
+  font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', 'Mangal', sans-serif;
+}
 
 /* Main Wrapper & Flex Layout */
 .main-wrapper {
@@ -302,6 +306,7 @@ nav a:active {
     padding: 0.2rem 0;
   }
 }
+
 
 /* Sidebar Styles */
 .sidebar {
