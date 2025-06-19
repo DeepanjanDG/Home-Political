@@ -4,9 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meghalaya Day Award - Home (Political) Department</title>
-  <link rel="stylesheet" href="css/meghalayadayaward.css" />
+  <link rel="stylesheet" href="css/scheme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* PDF Viewer styles */
+    .pdf-viewer-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 1000;
+      overflow: auto;
+    }
+    
+    .pdf-viewer-container {
+      width: 90%;
+      max-width: 1200px;
+      height: 90vh;
+      margin: 2% auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pdf-viewer-toolbar {
+      padding: 10px 15px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    .pdf-viewer {
+      flex-grow: 1;
+      border: none;
+      border-radius: 0 0 8px 8px;
+    }
+    
+    .pdf-controls {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .pdf-control-btn {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    
+    .pdf-control-btn:hover {
+      background: #1a252f;
+    }
+    
+    .document-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      max-width: 800px;
+    }
+    
+    .document-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+    
+    .document-size {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .document-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .load-pdf-btn, .download-btn {
+      padding: 8px 15px;
+      border-radius: 4px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+    
+    .load-pdf-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+    }
+    
+    .load-pdf-btn:hover {
+      background: #2980b9;
+    }
+    
+    .download-btn {
+      background: #27ae60;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .download-btn:hover {
+      background: #219653;
+    }
+    
+    .close-viewer-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .close-viewer-btn:hover {
+      background: #c0392b;
+    }
+    
+    @media (max-width: 768px) {
+      .pdf-viewer-container {
+        width: 95%;
+        height: 80vh;
+      }
+      
+      .document-actions {
+        flex-direction: column;
+      }
+      
+      .load-pdf-btn, .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Accessibility Toolbar -->
@@ -106,9 +256,9 @@
           <!-- Sidebar -->
           <aside class="sidebar">
             <div class="sidebar-section">
-              <h3>Main Content</h3>
+              <h3>Quick Links</h3>
               <ul>
-                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                <li><a href="meghalayadayaward.html" class="sidebar-link active">
                   <span>Meghalaya Day Award</span>
                 </a></li>
                 <li><a href="scheme.html" class="sidebar-link">
@@ -127,24 +277,38 @@
           <div class="main-content">
             <section class="content-section">
               <h2>About the Meghalaya Day Award</h2>
-              <p>The Meghalaya Day Award recognizes outstanding contributions to the state. Below you can access the official documents related to the award scheme.</p>
-              <div class="pdf-buttons">
-                <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn" download>
-                  Download
-                </a>
-                <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn">
-                  View
-                </a>
-              </div>
-              <div id="pdf-viewer-container" style="display:none; margin-top:1.5rem;">
-                <iframe 
-                  src="schemes_pdf/Scheme for payment of compensation.pdf"
-                  width="100%" 
-                  height="600px"
-                  style="border:0; margin-top:1.5rem;"
-                  title="Compensation Scheme PDF"
-                  aria-label="Compensation Scheme PDF"
-                ></iframe>
+              <p>The Meghalaya Day Award is the highest civilian honor conferred by the Government of Meghalaya to recognize exceptional service and achievement in various fields that contribute to the development and welfare of the state.</p>
+              
+              <h3>History</h3>
+              <p>Established in 1972 to commemorate the formation of the state of Meghalaya, the award recognizes individuals and organizations that have made outstanding contributions in fields such as social service, arts, literature, science and technology, sports, and public service.</p>
+              
+              <h3>Award Categories</h3>
+              <ul>
+                <li>Meghalaya Ratna - Highest honor for lifetime achievement</li>
+                <li>Meghalaya Vibhushan - For exceptional and distinguished service</li>
+                <li>Meghalaya Bhushan - For distinguished service of high order</li>
+                <li>Meghalaya Shri - For notable service in any field</li>
+              </ul>
+            </section>
+            
+            <section class="content-section">
+              <h2>Award Document</h2>
+              
+              <!-- Single Document Card -->
+              <div class="document-card">
+                <h3>Meghalaya Day Award Guidelines</h3>
+                <p>Detailed guidelines about the Meghalaya Day Award including eligibility criteria, nomination process, and selection procedure.</p>
+                <div class="document-info">
+                  <span class="document-size">PDF • 1.5 MB</span>
+                  <div class="document-actions">
+                    <button class="load-pdf-btn" data-pdf="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf">
+                      <i class="fas fa-eye"></i> View Document
+                    </button>
+                    <a href="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf" class="download-btn" download>
+                      <i class="fas fa-download"></i> Download
+                    </a>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
@@ -162,7 +326,7 @@
             <div class="sidebar-section">
               <h3>मुख्य विषयवस्तु</h3>
               <ul>
-                <li><a href="meghalayadayaward.html" class="sidebar-link">
+                <li><a href="meghalayadayaward.html" class="sidebar-link active">
                   <span>मेघालय दिवस पुरस्कार</span>
                 </a></li>
                 <li><a href="scheme.html" class="sidebar-link">
@@ -181,30 +345,66 @@
           <div class="main-content">
             <section class="content-section">
               <h2>मेघालय दिवस पुरस्कार के बारे में</h2>
-              <p>मेघालय दिवस पुरस्कार राज्य के लिए उत्कृष्ट योगदान को मान्यता देता है। नीचे आप पुरस्कार योजना से संबंधित आधिकारिक दस्तावेजों तक पहुंच सकते हैं।</p>
-              <div class="pdf-buttons">
-                <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn" download>
-                  डाउनलोड करें
-                </a>
-                <a href="schemes_pdf/Scheme for payment of compensation.pdf" target="_blank" class="utility-btn">
-                  देखें
-                </a>
-              </div>
-              <div id="pdf-viewer-container" style="display:none; margin-top:1.5rem;">
-                <iframe 
-                  src="schemes_pdf/Scheme for payment of compensation.pdf"
-                  width="100%" 
-                  height="600px"
-                  style="border:0; margin-top:1.5rem;"
-                  title="मुआवजा योजना PDF"
-                  aria-label="मुआवजा योजना PDF"
-                ></iframe>
+              <p>मेघालय दिवस पुरस्कार मेघालय सरकार द्वारा प्रदान किया जाने वाला सर्वोच्च नागरिक सम्मान है जो राज्य के विकास और कल्याण में विभिन्न क्षेत्रों में असाधारण सेवा और उपलब्धि को मान्यता देता है।</p>
+              
+              <h3>इतिहास</h3>
+              <p>1972 में मेघालय राज्य के गठन की स्मृति में स्थापित, यह पुरस्कार उन व्यक्तियों और संगठनों को मान्यता देता है जिन्होंने सामाजिक सेवा, कला, साहित्य, विज्ञान और प्रौद्योगिकी, खेल और सार्वजनिक सेवा जैसे क्षेत्रों में उत्कृष्ट योगदान दिया है।</p>
+              
+              <h3>पुरस्कार श्रेणियाँ</h3>
+              <ul>
+                <li>मेघालय रत्न - जीवन पर्यंत उपलब्धि के लिए सर्वोच्च सम्मान</li>
+                <li>मेघालय विभूषण - किसी भी क्षेत्र में असाधारण और विशिष्ट सेवा के लिए</li>
+                <li>मेघालय भूषण - उच्च स्तर की विशिष्ट सेवा के लिए</li>
+                <li>मेघालय श्री - किसी भी क्षेत्र में उल्लेखनीय सेवा के लिए</li>
+              </ul>
+            </section>
+            
+            <section class="content-section">
+              <h2>पुरस्कार दस्तावेज़</h2>
+              
+              <!-- Single Document Card -->
+              <div class="document-card">
+                <h3>मेघालय दिवस पुरस्कार दिशानिर्देश</h3>
+                <p>मेघालय दिवस पुरस्कार के बारे में विस्तृत दिशानिर्देश जिसमें पात्रता मानदंड, नामांकन प्रक्रिया और चयन प्रक्रिया शामिल है।</p>
+                <div class="document-info">
+                  <span class="document-size">PDF • 1.5 MB</span>
+                  <div class="document-actions">
+                    <button class="load-pdf-btn" data-pdf="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf">
+                      <i class="fas fa-eye"></i> दस्तावेज़ देखें
+                    </button>
+                    <a href="awards_pdfs/Meghalaya Day Award Revised Guideline.pdf" class="download-btn" download>
+                      <i class="fas fa-download"></i> डाउनलोड
+                    </a>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
         </div>
       </div>
     </main>
+  </div>
+
+  <!-- PDF Viewer Modal -->
+  <div id="pdf-viewer-modal" class="pdf-viewer-modal">
+    <div class="pdf-viewer-container">
+      <div class="pdf-viewer-toolbar">
+        <div class="pdf-document-title english-content">Document Viewer</div>
+        <div class="pdf-document-title hindi-content" style="display:none">दस्तावेज़ दर्शक</div>
+        <div class="pdf-controls">
+          <button class="pdf-control-btn english-content" id="pdf-prev-page"><i class="fas fa-arrow-left"></i> Previous</button>
+          <button class="pdf-control-btn hindi-content" id="pdf-prev-page-hi" style="display:none"><i class="fas fa-arrow-left"></i> पिछला</button>
+          <span id="pdf-page-info" class="english-content">Page 1 of 10</span>
+          <span id="pdf-page-info-hi" class="hindi-content" style="display:none">पृष्ठ 1 का 10</span>
+          <button class="pdf-control-btn english-content" id="pdf-next-page">Next <i class="fas fa-arrow-right"></i></button>
+          <button class="pdf-control-btn hindi-content" id="pdf-next-page-hi" style="display:none">अगला <i class="fas fa-arrow-right"></i></button>
+          <button class="close-viewer-btn" id="close-pdf-viewer">
+            <i class="fas fa-times"></i> <span class="english-content">Close</span><span class="hindi-content" style="display:none">बंद करें</span>
+          </button>
+        </div>
+      </div>
+      <iframe id="pdf-viewer-frame" class="pdf-viewer" title="PDF Document Viewer"></iframe>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -321,17 +521,59 @@
       // Initialize
       updateLanguage(currentLang);
 
-      // PDF Viewer Toggle
-      const btn = document.getElementById('show-pdf-btn');
-      if (btn) {
-        const viewer = document.getElementById('pdf-viewer-container');
-        btn.addEventListener('click', function() {
-          viewer.style.display = 'block';
-          btn.style.display = 'none';
-        });
-      }
+      // Enhanced PDF Viewer functionality
+      const pdfViewerModal = document.getElementById('pdf-viewer-modal');
+      const pdfViewerFrame = document.getElementById('pdf-viewer-frame');
+      const closePdfViewer = document.getElementById('close-pdf-viewer');
+      
+      let currentPdfUrl = '';
+      let currentPdfTitle = '';
+      
+      // Open PDF in modal viewer
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('load-pdf-btn') || e.target.parentElement.classList.contains('load-pdf-btn')) {
+          e.preventDefault();
+          const button = e.target.classList.contains('load-pdf-btn') ? e.target : e.target.parentElement;
+          currentPdfUrl = button.getAttribute('data-pdf');
+          currentPdfTitle = button.closest('.document-card').querySelector('h3').textContent;
+          
+          // Set document title
+          document.querySelector('.pdf-document-title').textContent = currentPdfTitle;
+          
+          // Load PDF in iframe
+          pdfViewerFrame.src = currentPdfUrl;
+          
+          // Show modal
+          pdfViewerModal.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+      
+      // Close modal
+      closePdfViewer.addEventListener('click', function() {
+        pdfViewerModal.style.display = 'none';
+        document.body.style.overflow = '';
+        pdfViewerFrame.src = '';
+      });
+      
+      // Close modal when clicking outside
+      pdfViewerModal.addEventListener('click', function(e) {
+        if (e.target === pdfViewerModal) {
+          pdfViewerModal.style.display = 'none';
+          document.body.style.overflow = '';
+          pdfViewerFrame.src = '';
+        }
+      });
+      
+      // Keyboard navigation for PDF viewer
+      document.addEventListener('keydown', function(e) {
+        if (pdfViewerModal.style.display === 'block' && e.key === 'Escape') {
+          pdfViewerModal.style.display = 'none';
+          document.body.style.overflow = '';
+          pdfViewerFrame.src = '';
+        }
+      });
     });
   </script>
-  <script src="js/index.js"></script>
 </body>
 </html>

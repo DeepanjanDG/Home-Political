@@ -169,6 +169,13 @@ body.contrast-black-white h6 {
   background-color: white;
   color: black;
   padding: 1rem 0;
+  /* Add the background image below */
+  background-image: url('images/Markham-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 120px;
+  position: relative;
 }
 .topbar .container {
   display: flex;
