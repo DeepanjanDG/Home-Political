@@ -237,7 +237,11 @@
       <!-- English Content -->
       <div class="english-content">
         <section class="hero">
-          <!-- <h2>Ensuring Safety and Governance in Meghalaya</h2> -->
+          <div class="hero-slider">
+          <img src="images/Meghalaya secretariat.webp" alt="Meghalaya Landscape" class="slide active">
+          <img src="images/Meghalaya_secretariat_2.jpg" alt="Government Building" class="slide">
+          <img src="images/Meghalaya_secretariat_3.jpg" alt="Natural Beauty" class="slide">
+          </div>
         </section>
         
         <div class="main-content-with-sidebar">
@@ -587,6 +591,17 @@
   </footer>
 
   <script>
+    // Place this before </body> or in your JS file
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3000); // Change image every 3 seconds
+});
+
     document.addEventListener('DOMContentLoaded', function() {
       // Set initial language from localStorage or default to English
       let currentLang = localStorage.getItem('preferredLanguage') || 'en';
