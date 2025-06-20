@@ -210,7 +210,7 @@ header h1 br + span {
 nav {
   background-color: #005aa7;
   position: sticky;
-  top: 0;
+  top: 0; 
   z-index: 100;
   transition: all 0.3s ease;
 }

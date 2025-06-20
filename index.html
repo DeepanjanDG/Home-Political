@@ -259,7 +259,7 @@
                 <li><a href="acts.html" class="sidebar-link">
                   <span>Acts</span>
                 </a></li>
-                <li><a href="faqs.html" class="sidebar-link">
+                <li><a href="orgsetup.html" class="sidebar-link">
                   <span>Rules</span>
                 </a></li>
               </ul>
@@ -592,15 +592,15 @@
 
   <script>
     // Place this before </body> or in your JS file
-document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.hero-slider .slide');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 3000); // Change image every 3 seconds
-});
+    document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000); // Change image every 3 seconds
+    });
 
     document.addEventListener('DOMContentLoaded', function() {
       // Set initial language from localStorage or default to English

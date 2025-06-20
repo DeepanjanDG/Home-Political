@@ -321,9 +321,9 @@ nav a:active {
 .hero-slider {
   position: relative;
   width: 100%;
-  max-width: 700px;
-  margin: 0 auto 1.5rem auto;
-  height: 220px;
+  max-width: 1400px;
+  margin: 0 auto 0rem auto;
+  height: 300px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -440,6 +440,13 @@ nav a:active {
   background: rgba(0, 0, 0, 0.6);
   padding: 15px 30px;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 300px; /* Smaller height on mobile */
+    aspect-ratio: unset; /* Override aspect ratio if needed */
+  }
 }
 
 /* Content Section Styles */
