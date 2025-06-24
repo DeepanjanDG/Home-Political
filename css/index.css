@@ -296,50 +296,60 @@ nav a:active {
   }
 }
 
+/* Hero Section - Static Three-Image Layout */
 .hero {
-  text-align: center;
-  padding: 2rem 0;
-  background: #f5f8fa;
-  position: relative;
+  width: 100%;
+  padding-bottom: 2rem;
 }
 
 .hero-images {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero-images img {
-  max-height: 180px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  object-fit: cover;
-}
-
-.hero-slider {
-  position: relative;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 0rem auto;
-  height: 300px;
+.hero-image-container {
+  flex: 1;
+  min-width: 0; /* Allows images to shrink properly */
+  border-radius: 8px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.hero-slider .slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+
+.hero-image-container:hover {
+  transform: translateY(-5px);
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s;
-  z-index: 0;
+  display: block;
 }
-.hero-slider .slide.active {
-  opacity: 1;
-  z-index: 1;
+
+@media (max-width: 900px) {
+  .hero-images {
+    flex-wrap: wrap;
+  }
+  .hero-image-container {
+    flex: 1 1 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-images {
+    flex-direction: column;
+  }
+  .hero-image-container {
+    width: 100%;
+  }
+  .hero-image {
+    height: 200px;
+  }
 }
 
 /* Main Wrapper */
@@ -423,29 +433,6 @@ nav a:active {
   }
   .sidebar {
     width: 100%;
-  }
-}
-
-/* Hero Section */
-.hero {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-  margin-bottom: 30px;
-}
-.hero h2 {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px 30px;
-  border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 300px; /* Smaller height on mobile */
-    aspect-ratio: unset; /* Override aspect ratio if needed */
   }
 }
 
