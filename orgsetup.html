@@ -7,61 +7,128 @@
   <link rel="stylesheet" href="css/acts.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- PDF.js libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
   <style>
-    /* Additional styles for PDF viewer */
-    .pdf-container {
-      width: 100%;
-      height: 80vh;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 20px 0;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* Government-style Organizational Chart */
+    .org-container {
+      max-width: 900px;
+      margin: 0 auto;
     }
     
-    #pdf-viewer {
-      width: 100%;
-      height: 100%;
-      border: none;
+    .org-title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #003366;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-bottom: 2px solid #005aa7;
+      padding-bottom: 10px;
     }
     
-    .pdf-controls {
+    .org-chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .org-level {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      width: 100%;
+      position: relative;
     }
     
-    .pdf-control-btn {
-      background: var(--secondary-color);
-      color: white;
-      border: none;
-      padding: 8px 15px;
+    .org-node {
+      background: white;
       border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s;
-    }
-    
-    .pdf-control-btn:hover {
-      background: var(--primary-color);
-    }
-    
-    .page-info {
+      padding: 16px 20px;
+      margin: 0 10px;
       text-align: center;
-      margin: 10px 0;
-      color: var(--text-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      min-width: 180px;
+      border-left: 4px solid #005aa7;
     }
     
+    /* Chief Secretary Styling */
+    .org-level-chief .org-node {
+      background: #003366;
+      color: white;
+      font-weight: 600;
+      border-left: 4px solid #ffcc00;
+      padding: 20px 25px;
+    }
+    
+    /* Additional Secretary Styling */
+    .org-level-additional .org-node {
+      background: #005aa7;
+      color: white;
+      font-weight: 500;
+    }
+    
+    /* Joint Secretary Styling */
+    .org-level-joint .org-node {
+      background: #e6f0fa;
+      border-left: 4px solid #005aa7;
+    }
+    
+    /* Deputy/Under Secretary Styling */
+    .org-level-deputy .org-node {
+      background: #f0f5ff;
+      border-left: 4px solid #6699cc;
+    }
+    
+    /* Support Staff Styling */
+    .org-level-staff .org-node {
+      background: #f8fafc;
+      border-left: 4px solid #99b3cc;
+    }
+    
+    /* Connector lines */
+    .org-node::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 15px;
+      background: #cbd5e1;
+    }
+    
+    .org-level:last-child .org-node::after {
+      display: none;
+    }
+    
+    /* Horizontal connectors for multiple nodes */
+    .org-level-multi::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: #cbd5e1;
+    }
+    
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .pdf-container {
-        height: 60vh;
+      .org-level {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
       }
       
-      .pdf-controls {
-        flex-wrap: wrap;
+      .org-node {
+        margin: 8px 0;
+        width: 80%;
+        max-width: 250px;
+      }
+      
+      .org-node::after,
+      .org-level-multi::before {
+        display: none;
       }
     }
   </style>
@@ -69,7 +136,46 @@
 <body>
   <!-- Accessibility Toolbar (same as previous) -->
   <div class="utility-bar">
-    <!-- Same utility bar content as in acts.html -->
+    <div class="container">
+      <div class="utility-group">
+        <button id="skip-to-main-content-btn" class="utility-btn english-content">Skip to main content</button>
+        <button id="skip-to-main-content-btn-hi" class="utility-btn hindi-content" style="display:none">मुख्य सामग्री पर जाएं</button>
+      </div>
+      <div class="utility-group">
+        <button id="screen-reader-access-btn" class="utility-btn english-content">Screen Reader Access</button>
+        <button id="screen-reader-access-btn-hi" class="utility-btn hindi-content" style="display:none">स्क्रीन रीडर एक्सेस</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label english-content">Text Size:</span>
+        <span class="utility-label hindi-content" style="display:none">टेक्स्ट आकार:</span>
+        <button class="utility-btn text-size-btn" data-size="small" title="Decrease text size">&#8722;A</button>
+        <button class="utility-btn text-size-btn" data-size="default" title="Default text size">A</button>
+        <button class="utility-btn text-size-btn" data-size="large" title="Increase text size">A&#43;</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label english-content">Contrast:</span>
+        <span class="utility-label hindi-content" style="display:none">कंट्रास्ट:</span>
+        <button class="utility-btn contrast-btn contrast-default-btn" data-theme="default" title="Default Contrast">A</button>
+        <button class="utility-btn contrast-btn contrast-yellow-black-btn" data-theme="yellow-black" title="Yellow on Black">A</button>
+        <button class="utility-btn contrast-btn contrast-black-white-btn" data-theme="black-white" title="Black on White">A</button>
+      </div>
+      <div class="utility-group">
+        <span class="utility-label english-content">Spacing:</span>
+        <span class="utility-label hindi-content" style="display:none">स्पेसिंग:</span>
+        <button class="utility-btn spacing-btn" data-spacing="wide" title="Increase spacing">On</button>
+        <button class="utility-btn spacing-btn" data-spacing="normal" title="Normal spacing">Off</button>
+      </div>
+      <div class="utility-group">
+        <button id="hindi-btn" class="utility-btn">हिन्दी</button>
+        <button id="english-btn" class="utility-btn" style="display: none;">English</button>
+      </div>
+      <div class="utility-group search-group">
+        <input type="text" id="search-input" placeholder="Search..." class="search-input english-content">
+        <input type="text" id="search-input-hi" placeholder="खोजें..." class="search-input hindi-content" style="display:none">
+        <button id="search-btn" class="search-btn english-content">Go</button>
+        <button id="search-btn-hi" class="search-btn hindi-content" style="display:none">खोजें</button>
+      </div>
+    </div>
   </div>
 
   <!-- Header (same as previous) -->
@@ -95,18 +201,20 @@
       <ul class="english-content">
         <li><a href="index.html">Home</a></li>
         <li><a href="notification.html">Notifications</a></li>
-        <li><a href="acts.html">Acts</a></li>
-        <li><a href="organisational-setup.html" class="active">Organisational Setup</a></li>
+        <li><a href="orgsetup.html"  class="active">Organisation setup</a></li>
         <li><a href="about.html">About Us</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
         <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
       <ul class="hindi-content" style="display:none">
         <li><a href="index.html">होम</a></li>
         <li><a href="notification.html">अधिसूचनाएं</a></li>
-        <li><a href="acts.html">अधिनियम</a></li>
-        <li><a href="organisational-setup.html" class="active">संगठनात्मक संरचना</a></li>
+        <li><a href="orgsetup.html"  class="active">संगठन की स्थापना</a></li>
         <li><a href="about.html">हमारे बारे में</a></li>
+        <li><a href="faqs.html">सामान्य प्रश्न</a></li>
         <li><a href="contact.html">संपर्क करें</a></li>
+        <li><a href="sitemap.html">साइटमैप</a></li>
       </ul>
     </nav>
   </header>
@@ -143,42 +251,65 @@
           </aside>
 
           <!-- Main Content -->
-          <div class="main-content">
-            <section class="content-section">
-              <h2>Department Hierarchy</h2>
-              
-              <div class="pdf-controls">
-                <button class="pdf-control-btn" id="prev-page">
-                  <i class="fas fa-arrow-left"></i> Previous
-                </button>
-                <span class="page-info">
-                  Page <span id="page-num">1</span> of <span id="page-count">1</span>
-                </span>
-                <button class="pdf-control-btn" id="next-page">
-                  Next <i class="fas fa-arrow-right"></i>
-                </button>
-                <button class="pdf-control-btn" id="zoom-in">
-                  <i class="fas fa-search-plus"></i> Zoom In
-                </button>
-                <button class="pdf-control-btn" id="zoom-out">
-                  <i class="fas fa-search-minus"></i> Zoom Out
-                </button>
-                <a href="Org_Setup/Organisational_setup.pdf" class="pdf-control-btn" download>
-                  <i class="fas fa-download"></i> Download
-                </a>
-              </div>
-              
-              <div class="pdf-container">
-                <canvas id="pdf-viewer"></canvas>
-              </div>
-              
-              <div class="document-info english-content">
-                <p>This document outlines the organisational structure of the Home (Political) Department, Government of Meghalaya.</p>
-              </div>
-            </section>
-          </div>
-        </div>
+          <div class="org-container">
+    <h1 class="org-title">Organizational Hierarchy</h1>
+    
+    <div class="org-chart">
+      <!-- Level 1 - Chief Secretary -->
+      <div class="org-level org-level-1">
+        <div class="org-node">Chief Secretary</div>
       </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 2 - Additional Chief Secretary -->
+      <div class="org-level org-level-2">
+        <div class="org-node">Additional Chief Secretary</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 3 - Principal/Commissioner -->
+      <div class="org-level org-level-3">
+        <div class="org-h-connector"></div>
+        <div class="org-node">Principal Secretary</div>
+        <div class="org-node">Commissioner & Secretary</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 4 - Joint Secretary -->
+      <div class="org-level org-level-4">
+        <div class="org-node">Joint Secretary</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 5 - Deputy/Under Secretary -->
+      <div class="org-level org-level-4">
+        <div class="org-h-connector"></div>
+        <div class="org-node">Deputy Secretary</div>
+        <div class="org-node">Under Secretary</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 6 - Superintendent -->
+      <div class="org-level org-level-5">
+        <div class="org-node">Superintendent</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 7 - Assistant Superintendent -->
+      <div class="org-level org-level-5">
+        <div class="org-node">Assistant Superintendent</div>
+      </div>
+      <div class="org-connector"></div>
+
+      <!-- Level 8 - UDA/LDA -->
+      <div class="org-level org-level-5">
+        <div class="org-h-connector"></div>
+        <div class="org-node">Upper Division Assistant</div>
+        <div class="org-node">Lower Division Assistant</div>
+        <div class="org-node">Grade-IV</div>
+      </div>
+    </div>
+  </div>
 
       <!-- Hindi Content -->
       <div class="hindi-content" style="display:none">
@@ -474,7 +605,6 @@
       document.getElementById('zoom-out-hi').addEventListener('click', zoomOut);
       
       // Same language toggling JavaScript as in acts.html
-      // ...
     });
   </script>
 </body>
