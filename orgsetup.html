@@ -131,6 +131,25 @@
         display: none;
       }
     }
+
+    /* Language toggle styles */
+    .language-toggle-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .language-toggle-btn {
+      background: #005aa7;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 5px;
+      font-weight: 500;
+    }
+    .language-toggle-btn.active {
+      background: #003366;
+    }
   </style>
 </head>
 <body>
@@ -223,7 +242,7 @@
   <div class="main-wrapper">
     <main id="main-content">
       <!-- English Content -->
-      <div class="english-content">
+      <div id="englishContent" class="english-content">
         <section class="hero">
           <h2>Organisational Setup</h2>
         </section>
@@ -252,67 +271,69 @@
 
           <!-- Main Content -->
           <div class="org-container">
-    <h1 class="org-title">Organizational Hierarchy</h1>
-    
-    <div class="org-chart">
-      <!-- Level 1 - Chief Secretary -->
-      <div class="org-level org-level-1">
-        <div class="org-node">Chief Secretary</div>
-      </div>
-      <div class="org-connector"></div>
+            <h1 class="org-title">Organizational Hierarchy</h1>
+            
+            <div class="org-chart">
+              <!-- Level 1 - Chief Secretary -->
+              <div class="org-level org-level-chief">
+                <div class="org-node">Chief Secretary</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 2 - Additional Chief Secretary -->
-      <div class="org-level org-level-2">
-        <div class="org-node">Additional Chief Secretary</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 2 - Additional Chief Secretary -->
+              <div class="org-level org-level-additional">
+                <div class="org-node">Additional Chief Secretary</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 3 - Principal/Commissioner -->
-      <div class="org-level org-level-3">
-        <div class="org-h-connector"></div>
-        <div class="org-node">Principal Secretary</div>
-        <div class="org-node">Commissioner & Secretary</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 3 - Principal/Commissioner -->
+              <div class="org-level org-level-joint org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">Principal Secretary</div>
+                <div class="org-node">Commissioner & Secretary</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 4 - Joint Secretary -->
-      <div class="org-level org-level-4">
-        <div class="org-node">Joint Secretary</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 4 - Joint Secretary -->
+              <div class="org-level org-level-joint">
+                <div class="org-node">Joint Secretary</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 5 - Deputy/Under Secretary -->
-      <div class="org-level org-level-4">
-        <div class="org-h-connector"></div>
-        <div class="org-node">Deputy Secretary</div>
-        <div class="org-node">Under Secretary</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 5 - Deputy/Under Secretary -->
+              <div class="org-level org-level-deputy org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">Deputy Secretary</div>
+                <div class="org-node">Under Secretary</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 6 - Superintendent -->
-      <div class="org-level org-level-5">
-        <div class="org-node">Superintendent</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 6 - Superintendent -->
+              <div class="org-level org-level-staff">
+                <div class="org-node">Superintendent</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 7 - Assistant Superintendent -->
-      <div class="org-level org-level-5">
-        <div class="org-node">Assistant Superintendent</div>
-      </div>
-      <div class="org-connector"></div>
+              <!-- Level 7 - Assistant Superintendent -->
+              <div class="org-level org-level-staff">
+                <div class="org-node">Assistant Superintendent</div>
+              </div>
+              <div class="org-connector"></div>
 
-      <!-- Level 8 - UDA/LDA -->
-      <div class="org-level org-level-5">
-        <div class="org-h-connector"></div>
-        <div class="org-node">Upper Division Assistant</div>
-        <div class="org-node">Lower Division Assistant</div>
-        <div class="org-node">Grade-IV</div>
+              <!-- Level 8 - UDA/LDA -->
+              <div class="org-level org-level-staff org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">Upper Division Assistant</div>
+                <div class="org-node">Lower Division Assistant</div>
+                <div class="org-node">Grade-IV</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
       <!-- Hindi Content -->
-      <div class="hindi-content" style="display:none">
+      <div id="hindiContent" class="hindi-content" style="display:none">
         <section class="hero">
           <h2>संगठनात्मक संरचना</h2>
         </section>
@@ -340,46 +361,70 @@
           </aside>
 
           <!-- Main Content -->
-          <div class="main-content">
-            <section class="content-section">
-              <h2>विभाग पदानुक्रम</h2>
-              
-              <div class="pdf-controls">
-                <button class="pdf-control-btn" id="prev-page-hi">
-                  <i class="fas fa-arrow-left"></i> पिछला
-                </button>
-                <span class="page-info">
-                  पृष्ठ <span id="page-num-hi">1</span> का <span id="page-count-hi">1</span>
-                </span>
-                <button class="pdf-control-btn" id="next-page-hi">
-                  अगला <i class="fas fa-arrow-right"></i>
-                </button>
-                <button class="pdf-control-btn" id="zoom-in-hi">
-                  <i class="fas fa-search-plus"></i> ज़ूम इन
-                </button>
-                <button class="pdf-control-btn" id="zoom-out-hi">
-                  <i class="fas fa-search-minus"></i> ज़ूम आउट
-                </button>
-                <a href="Org_Setup/Organisational_setup.pdf" class="pdf-control-btn" download>
-                  <i class="fas fa-download"></i> डाउनलोड
-                </a>
+          <div class="org-container">
+            <h1 class="org-title">संगठनात्मक पदानुक्रम</h1>
+            
+            <div class="org-chart">
+              <!-- Level 1 - Chief Secretary -->
+              <div class="org-level org-level-chief">
+                <div class="org-node">मुख्य सचिव</div>
               </div>
-              
-              <div class="pdf-container">
-                <canvas id="pdf-viewer-hi"></canvas>
+              <div class="org-connector"></div>
+
+              <!-- Level 2 - Additional Chief Secretary -->
+              <div class="org-level org-level-additional">
+                <div class="org-node">अतिरिक्त मुख्य सचिव</div>
               </div>
-              
-              <div class="document-info hindi-content">
-                <p>यह दस्तावेज़ मेघालय सरकार के गृह (राजनीतिक) विभाग की संगठनात्मक संरचना को दर्शाता है।</p>
+              <div class="org-connector"></div>
+
+              <!-- Level 3 - Principal/Commissioner -->
+              <div class="org-level org-level-joint org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">प्रधान सचिव</div>
+                <div class="org-node">आयुक्त एवं सचिव</div>
               </div>
-            </section>
+              <div class="org-connector"></div>
+
+              <!-- Level 4 - Joint Secretary -->
+              <div class="org-level org-level-joint">
+                <div class="org-node">संयुक्त सचिव</div>
+              </div>
+              <div class="org-connector"></div>
+
+              <!-- Level 5 - Deputy/Under Secretary -->
+              <div class="org-level org-level-deputy org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">उप सचिव</div>
+                <div class="org-node">अवर सचिव</div>
+              </div>
+              <div class="org-connector"></div>
+
+              <!-- Level 6 - Superintendent -->
+              <div class="org-level org-level-staff">
+                <div class="org-node">अधीक्षक</div>
+              </div>
+              <div class="org-connector"></div>
+
+              <!-- Level 7 - Assistant Superintendent -->
+              <div class="org-level org-level-staff">
+                <div class="org-node">सहायक अधीक्षक</div>
+              </div>
+              <div class="org-connector"></div>
+
+              <!-- Level 8 - UDA/LDA -->
+              <div class="org-level org-level-staff org-level-multi">
+                <div class="org-h-connector"></div>
+                <div class="org-node">उच्च श्रेणी सहायक</div>
+                <div class="org-node">निम्न श्रेणी सहायक</div>
+                <div class="org-node">ग्रेड-IV</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  
   <footer>
     <div class="footer-main">
       <div class="footer-copy english-content">
@@ -448,164 +493,50 @@
   </footer>
 
   <script>
-    // Initialize PDF.js
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
-    
-    // English PDF Viewer
-    let pdfDoc = null,
-        pageNum = 1,
-        pageRendering = false,
-        pageNumPending = null,
-        scale = 1.0,
-        canvas = document.getElementById('pdf-viewer'),
-        ctx = canvas.getContext('2d');
-    
-    // Hindi PDF Viewer (separate instance)
-    let pdfDocHi = null,
-        pageNumHi = 1,
-        canvasHi = document.getElementById('pdf-viewer-hi'),
-        ctxHi = canvasHi.getContext('2d');
-    
-    // Render the page
-    function renderPage(num, pdfDocument, canvasElement, context) {
-      pageRendering = true;
-      
-      pdfDocument.getPage(num).then(function(page) {
-        const viewport = page.getViewport({ scale: scale });
-        canvasElement.height = viewport.height;
-        canvasElement.width = viewport.width;
-        
-        const renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        
-        const renderTask = page.render(renderContext);
-        
-        renderTask.promise.then(function() {
-          pageRendering = false;
-          if (pageNumPending !== null) {
-            renderPage(pageNumPending, pdfDocument, canvasElement, context);
-            pageNumPending = null;
-          }
-        });
-      });
-      
-      if (pdfDocument === pdfDoc) {
-        document.getElementById('page-num').textContent = num;
-      } else {
-        document.getElementById('page-num-hi').textContent = num;
-      }
-    }
-    
-    // Queue rendering of the next page
-    function queueRenderPage(num, pdfDocument, canvasElement, context, lang) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num, pdfDocument, canvasElement, context);
-        if (lang === 'en') {
-          pageNum = num;
-        } else {
-          pageNumHi = num;
-        }
-      }
-    }
-    
-    // Previous page
-    function onPrevPage(pdfDocument, currentPage, canvasElement, context, lang) {
-      if (currentPage <= 1) {
-        return;
-      }
-      currentPage--;
-      queueRenderPage(currentPage, pdfDocument, canvasElement, context, lang);
-    }
-    
-    // Next page
-    function onNextPage(pdfDocument, currentPage, pageCount, canvasElement, context, lang) {
-      if (currentPage >= pageCount) {
-        return;
-      }
-      currentPage++;
-      queueRenderPage(currentPage, pdfDocument, canvasElement, context, lang);
-    }
-    
-    // Zoom in
-    function zoomIn() {
-      scale *= 1.1;
-      if (pdfDoc) {
-        queueRenderPage(pageNum, pdfDoc, canvas, ctx, 'en');
-      }
-      if (pdfDocHi) {
-        queueRenderPage(pageNumHi, pdfDocHi, canvasHi, ctxHi, 'hi');
-      }
-    }
-    
-    // Zoom out
-    function zoomOut() {
-      scale /= 1.1;
-      if (scale < 0.5) scale = 0.5;
-      if (pdfDoc) {
-        queueRenderPage(pageNum, pdfDoc, canvas, ctx, 'en');
-      }
-      if (pdfDocHi) {
-        queueRenderPage(pageNumHi, pdfDocHi, canvasHi, ctxHi, 'hi');
-      }
-    }
-    
-    // Load the PDF
-    function loadPdf(url, pdfDocumentVar, pageCountElement, lang) {
-      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-        if (lang === 'en') {
-          pdfDoc = pdfDoc_;
-        } else {
-          pdfDocHi = pdfDoc_;
-        }
-        
-        document.getElementById(pageCountElement).textContent = pdfDoc_.numPages;
-        
-        // Render the first page
-        renderPage(1, pdfDoc_, 
-                  lang === 'en' ? canvas : canvasHi, 
-                  lang === 'en' ? ctx : ctxHi);
-      }).catch(function(error) {
-        console.error('Error loading PDF:', error);
-        alert('Error loading PDF. Please try again later.');
-      });
-    }
-    
-    // Initialize the PDF viewer when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
-      // Load the PDF for both languages
-      loadPdf('Org_Setup/Organisational_setup.pdf', pdfDoc, 'page-count', 'en');
-      loadPdf('Org_Setup/Organisational_setup.pdf', pdfDocHi, 'page-count-hi', 'hi');
+      // Set initial language from localStorage or default to English
+      let currentLang = localStorage.getItem('preferredLanguage') || 'en';
       
-      // Event listeners for English controls
-      document.getElementById('prev-page').addEventListener('click', function() {
-        onPrevPage(pdfDoc, pageNum, canvas, ctx, 'en');
+      function updateLanguage(lang) {
+        currentLang = lang;
+        
+        // Update content visibility
+        const englishElements = document.querySelectorAll('.english-content');
+        const hindiElements = document.querySelectorAll('.hindi-content');
+        
+        if (lang === 'en') {
+          englishElements.forEach(el => el.style.display = '');
+          hindiElements.forEach(el => el.style.display = 'none');
+          document.getElementById('hindi-btn').style.display = 'inline-block';
+          document.getElementById('english-btn').style.display = 'none';
+          document.title = "Screen Reader Access - Home (Political) Department";
+          document.documentElement.lang = 'en';
+        } else {
+          englishElements.forEach(el => el.style.display = 'none');
+          hindiElements.forEach(el => el.style.display = '');
+          document.getElementById('english-btn').style.display = 'inline-block';
+          document.getElementById('hindi-btn').style.display = 'none';
+          document.title = "स्क्रीन रीडर एक्सेस - गृह (राजनीतिक) विभाग";
+          document.documentElement.lang = 'hi';
+        }
+        
+        // Save preference
+        localStorage.setItem('preferredLanguage', lang);
+      }
+
+      // Set up event listeners
+      document.getElementById('english-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('en');
       });
       
-      document.getElementById('next-page').addEventListener('click', function() {
-        onNextPage(pdfDoc, pageNum, pdfDoc.numPages, canvas, ctx, 'en');
+      document.getElementById('hindi-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        updateLanguage('hi');
       });
-      
-      // Event listeners for Hindi controls
-      document.getElementById('prev-page-hi').addEventListener('click', function() {
-        onPrevPage(pdfDocHi, pageNumHi, canvasHi, ctxHi, 'hi');
-      });
-      
-      document.getElementById('next-page-hi').addEventListener('click', function() {
-        onNextPage(pdfDocHi, pageNumHi, pdfDocHi.numPages, canvasHi, ctxHi, 'hi');
-      });
-      
-      // Zoom controls (shared between both)
-      document.getElementById('zoom-in').addEventListener('click', zoomIn);
-      document.getElementById('zoom-out').addEventListener('click', zoomOut);
-      document.getElementById('zoom-in-hi').addEventListener('click', zoomIn);
-      document.getElementById('zoom-out-hi').addEventListener('click', zoomOut);
-      
-      // Same language toggling JavaScript as in acts.html
+
+      // Initialize
+      updateLanguage(currentLang);
     });
   </script>
-</body>
 </html>
